@@ -88,17 +88,6 @@ ${prompts.userPrompt}`;
 
 // Initialize Analyzed Input screen
 document.addEventListener('DOMContentLoaded', () => {
-    // Generate JSON prompt button
-    const generateBtn = document.getElementById('generateJsonPromptBtn');
-    if (generateBtn) {
-        generateBtn.addEventListener('click', async () => {
-            const prompts = await generateJsonPrompt();
-            if (prompts) {
-                alert('✓ Prompt đã được tạo! Nhấn "Copy Prompt" để sao chép.');
-            }
-        });
-    }
-
     // Copy JSON prompt button
     const copyBtn = document.getElementById('copyJsonPromptBtn');
     if (copyBtn) {

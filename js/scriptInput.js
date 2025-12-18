@@ -29,19 +29,26 @@ async function generateScriptPrompt() {
     updateDisplayValue('displayDuration', settings.duration);
     updateDisplayValue('displaySceneCount', calculateSceneCount(settings.duration));
 
-    // Load general and style-specific prompts
-    const [generalPrompt, stylePrompt] = await Promise.all([
-        loadPromptFile('styles/general.md'),
-        loadPromptFile(`styles/${settings.style}.md`)
-    ]);
+    // Load screenplay analysis prompt (kichban.md)
+    const kichbanPrompt = await loadPromptFile('styles/kichban.md');
 
-    if (!generalPrompt || !stylePrompt) {
+    if (!kichbanPrompt) {
         return null;
     }
 
-    // Combine prompts
-    const systemPrompt = `${generalPrompt}\n\n${stylePrompt}`;
-    const userPrompt = `STORY SCRIPT: ${scriptText}\n\nPROJECT PARAMETERS:\n\nDuration: ${settings.duration}s → EXACTLY ${calculateSceneCount(settings.duration)} scenes (8s each)\n\nIf short: add establishing/transition shots | If long: split actions\n\n⚠️ BREVITY REQUIRED - Keep output concise:\n\nfinalVideoPrompt.descriptiveProse: ~200-300 words\n\nfinalVideoPrompt.keywords: 40-60 keywords\n\nfinalAudioPrompt: 2-3 sentences with BPM and mix %\n\n⚠️ LANGUAGE REQUIREMENT:\n- dialogueContent.text ONLY in ${settings.dialogueLanguage === 'vi-VN' ? 'Vietnamese' : settings.dialogueLanguage}\n- ALL other content (finalVideoPrompt, finalAudioPrompt) in ENGLISH\n\nVALIDATION:\n\nscenePrompts.length === ${calculateSceneCount(settings.duration)}\n\nEach scene: sceneNumber + references array + estimatedDuration + finalVideoPrompt {descriptiveProse, keywords, negativePrompt} + finalAudioPrompt\n\n⚠️ CRITICAL: Return ONLY pure JSON - NO markdown, NO explanation. Ensure JSON is valid.`;
+    // System prompt is the kichban.md content
+    const systemPrompt = kichbanPrompt;
+
+    // User prompt with the story idea
+    const userPrompt = `Ý TƯỞNG CỐT LÕI:
+${scriptText}
+
+THÔNG SỐ DỰ ÁN:
+- Thời lượng: ${settings.duration} giây (${calculateSceneCount(settings.duration)} cảnh × 8 giây/cảnh)
+- Phong cách dự kiến: ${settings.style}
+- Ngôn ngữ đối thoại: ${settings.dialogueLanguage === 'vi-VN' ? 'Tiếng Việt' : settings.dialogueLanguage}
+
+Hãy phân tích ý tưởng và viết kịch bản phân cảnh chi tiết theo đúng format đã nêu trong hướng dẫn.`;
 
     return { systemPrompt, userPrompt };
 }
@@ -83,17 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const durationInput = document.getElementById('durationInput');
     if (durationInput) {
         durationInput.addEventListener('input', updateSceneCount);
-    }
-
-    // Generate prompt button
-    const generateBtn = document.getElementById('generatePromptBtn');
-    if (generateBtn) {
-        generateBtn.addEventListener('click', async () => {
-            const prompts = await generateScriptPrompt();
-            if (prompts) {
-                alert('✓ Prompt đã được tạo! Nhấn "Copy Prompt" để sao chép.');
-            }
-        });
     }
 
     // Copy prompt button

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineTool - AI Film Production Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar with Logo -->
+        <nav class="top-nav">
+            <div class="logo-section">
+                <span class="logo-icon">🎬</span>
+                <span class="logo-text">CineTool</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="scriptInput" onclick="switchScreen('scriptInput')">
+                    📝 Nhập Kịch Bản
+                </button>
+                <button class="nav-tab" data-tab="analyzedInput" onclick="switchScreen('analyzedInput')">
+                    🎯 Kịch Bản Đã Phân Tích
+                </button>
+                <button class="nav-tab" data-tab="jsonFilter" onclick="switchScreen('jsonFilter')">
+                    🔧 Lọc JSON
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Tab 1: Script Input & Settings -->
+            <section id="scriptInput" class="tab-panel active">
+                <div class="content-wrapper">
+                    <div class="input-section">
+                        <label for="scriptInputArea">Nội dung kịch bản phim</label>
+                        <textarea id="scriptInputArea"
+                            placeholder="Nhập ý tưởng kịch bản của bạn tại đây...&#10;&#10;Ví dụ: Một cậu bé sống ở một làng chài nhỏ nhặt được một chiếc la bàn cũ kỹ không chỉ về hướng bắc mà chỉ về thứ cậu bé mong muốn nhất."
+                            rows="10"></textarea>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>⚙️ Cài đặt</h3>
+
+                        <div class="setting-group">
+                            <label for="styleSelect">Phong cách làm phim</label>
+                            <select id="styleSelect">
+                                <option value="cinematic">Cinematic - Phong cách điện ảnh</option>
+                                <option value="cyberpunk">Cyberpunk - Khoa học viễn tưởng</option>
+                                <option value="realistic">Realistic - Thực tế</option>
+                                <option value="horror">Horror - Kinh dị</option>
+                                <option value="fantasy">Fantasy - Kỳ ảo</option>
+                                <option value="3d_pixar">3D Pixar - Hoạt hình 3D</option>
+                                <option value="2d_cartoon">2D Cartoon - Hoạt hình 2D</option>
+                                <option value="2d_anime">2D Anime - Anime Nhật</option>
+                                <option value="retro">Retro - Cổ điển</option>
+                                <option value="vintage">Vintage - Hoài niệm</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-group">
+                            <label for="dialogueLanguageSelect">Ngôn ngữ đối thoại</label>
+                            <select id="dialogueLanguageSelect">
+                                <option value="vi-VN">Tiếng Việt</option>
+                                <option value="en-US">English</option>
+                                <option value="zh-CN">中文</option>
+                                <option value="ja-JP">日本語</option>
+                                <option value="ko-KR">한국어</option>
+                            </select>
+                        </div>
+
+                        <div class="setting-group">
+                            <label for="durationInput">Thời lượng video (giây)</label>
+                            <input type="number" id="durationInput" value="24" min="8" max="120" step="8">
+                            <small>Mỗi cảnh 8 giây. Tổng: <span id="sceneCountDisplay">3</span> cảnh</small>
+                        </div>
+
+                        <div class="setting-group">
+                            <label for="aspectRatioSelect">Tỷ lệ khung hình</label>
+                            <select id="aspectRatioSelect">
+                                <option value="16:9">16:9 (YouTube, TV)</option>
+                                <option value="9:16">9:16 (TikTok, Instagram Stories)</option>
+                                <option value="1:1">1:1 (Instagram Post)</option>
+                                <option value="4:3">4:3 (Cổ điển)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="generatePromptBtn" class="btn btn-primary">
+                            🚀 Tạo Prompt Phân Tích Kịch Bản
+                        </button>
+                        <button id="copyPromptBtn" class="btn btn-secondary">
+                            📋 Copy Prompt Phân Tích Kịch Bản
+                        </button>
+                    </div>
+
+                    <div id="copyNotification1" class="notification">✓ Đã copy prompt vào clipboard!</div>
+                </div>
+            </section>
+
+            <!-- Tab 2: Analyzed Script Input -->
+            <section id="analyzedInput" class="tab-panel">
+                <div class="content-wrapper">
+                    <div class="settings-display">
+                        <h4>Cài đặt đã chọn:</h4>
+                        <p><strong>Phong cách:</strong> <span id="displayStyle">Cinematic</span></p>
+                        <p><strong>Ngôn ngữ đối thoại:</strong> <span id="displayDialogueLanguage">Tiếng Việt</span></p>
+                        <p><strong>Thời lượng:</strong> <span id="displayDuration">24</span> giây (<span
+                                id="displaySceneCount">3</span> cảnh)</p>
+                    </div>
+
+                    <div class="input-section">
+                        <label for="analyzedScriptInput">Kịch bản đã được phân tích</label>
+                        <textarea id="analyzedScriptInput" placeholder="Dán kịch bản đã được phân tích từ AI vào đây..."
+                            rows="15"></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="generateJsonPromptBtn" class="btn btn-primary">
+                            🎯 Tạo Prompt Sinh JSON
+                        </button>
+                        <button id="copyJsonPromptBtn" class="btn btn-secondary">
+                            📋 Copy Prompt Sinh JSON
+                        </button>
+                    </div>
+
+                    <div id="copyNotification2" class="notification">✓ Đã copy prompt vào clipboard!</div>
+                </div>
+            </section>
+
+            <!-- Tab 3: JSON Filter -->
+            <section id="jsonFilter" class="tab-panel">
+                <div class="content-wrapper split-view">
+                    <div class="left-panel">
+                        <h3>JSON Input</h3>
+                        <textarea id="jsonInput"
+                            placeholder='Dán JSON từ AI vào đây...&#10;&#10;{&#10;  "masterConfig": { ... },&#10;  "scenePrompts": [ ... ]&#10;}'
+                            rows="12"></textarea>
+                        <button id="parseJsonBtn" class="btn btn-primary">🔄 Phân Tích JSON</button>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="switchTab('scenes')">SCENES</button>
+                            <button class="tab-btn" onclick="switchTab('references')">REFERENCES</button>
+                        </div>
+
+                        <div id="scenesTab" class="tab-content active">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h3 style="margin: 0;">Danh Sách Cảnh</h3>
+                                <button onclick="copyAllScenes(event)" class="copy-btn" style="padding: 10px 20px;">
+                                    📋 Copy Toàn Bộ Scenes
+                                </button>
+                            </div>
+                            <div id="scenesOutput" class="output-content">
+                                <p class="placeholder">Chưa có dữ liệu. Vui lòng nhập JSON và nhấn "Phân Tích JSON".</p>
+                            </div>
+                        </div>
+
+                        <div id="referencesTab" class="tab-content">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <button onclick="copyAllReferences(event)" class="copy-btn" style="padding: 10px 20px;">
+                                    📋 Copy Toàn Bộ Refs
+                                </button>
+                            </div>
+                            <div id="referencesOutput" class="output-content">
+                                <div class="reference-section">
+                                    <div id="masterConfigOutput" class="code-block">
+                                        <p class="placeholder">Chưa có dữ liệu.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Load modular scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/scriptInput.js"></script>
+    <script src="js/analyzedInput.js"></script>
+    <script src="js/jsonFilter.js"></script>
+    <script src="js/navigation.js"></script>
+</body>
+
+</html>

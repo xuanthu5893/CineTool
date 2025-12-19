@@ -23,12 +23,6 @@ async function generateScriptPrompt() {
         return null;
     }
 
-    // Update display values
-    updateDisplayValue('displayStyle', settings.style.charAt(0).toUpperCase() + settings.style.slice(1));
-    updateDisplayValue('displayDialogueLanguage', settings.dialogueLanguage === 'vi-VN' ? 'Tiếng Việt' : settings.dialogueLanguage);
-    updateDisplayValue('displayDuration', settings.duration);
-    updateDisplayValue('displaySceneCount', calculateSceneCount(settings.duration));
-
     // Load screenplay analysis prompt (kichban.md)
     const kichbanPrompt = await loadPromptFile('styles/kichban.md');
 
@@ -58,15 +52,15 @@ async function copyScriptPrompt() {
     const prompts = await generateScriptPrompt();
     if (!prompts) return;
 
-    const fullPrompt = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    const fullPrompt = `━━━
 🎬 SYSTEM PROMPT (Paste this into AI System Prompt field)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━
 
 ${prompts.systemPrompt}
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━
 👤 USER PROMPT (Paste this into AI Chat)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━
 
 ${prompts.userPrompt}`;
 

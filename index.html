@@ -29,9 +29,55 @@
             </div>
         </nav>
 
+        <!-- Shared Settings Panel (visible on all tabs) -->
+        <aside class="settings-panel">
+            <h3>⚙️ Cài đặt</h3>
+
+            <div class="setting-group">
+                <label for="styleSelect">Phong cách làm phim</label>
+                <select id="styleSelect">
+                    <option value="cinematic">Cinematic - Phong cách điện ảnh</option>
+                    <option value="cyberpunk">Cyberpunk - Khoa học viễn tưởng</option>
+                    <option value="realistic">Realistic - Thực tế</option>
+                    <option value="horror">Horror - Kinh dị</option>
+                    <option value="fantasy">Fantasy - Kỳ ảo</option>
+                    <option value="3d_pixar">3D Pixar - Hoạt hình 3D</option>
+                    <option value="2d_cartoon">2D Cartoon - Hoạt hình 2D</option>
+                    <option value="2d_anime">2D Anime - Anime Nhật</option>
+                    <option value="retro">Retro - Cổ điển</option>
+                    <option value="vintage">Vintage - Hoài niệm</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label for="dialogueLanguageSelect">Ngôn ngữ đối thoại</label>
+                <select id="dialogueLanguageSelect">
+                    <option value="vi-VN">Tiếng Việt</option>
+                    <option value="en-US">English</option>
+                    <option value="zh-CN">中文</option>
+                    <option value="ja-JP">日本語</option>
+                    <option value="ko-KR">한국어</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label for="durationInput">Thời lượng video (giây)</label>
+                <input type="number" id="durationInput" value="24" min="8" max="120" step="8">
+                <small>Mỗi cảnh 8 giây. Tổng: <span id="sceneCountDisplay">3</span> cảnh</small>
+            </div>
+
+            <div class="setting-group">
+                <label for="aspectRatioSelect">Tỷ lệ khung hình</label>
+                <select id="aspectRatioSelect">
+                    <option value="16:9">16:9 (YouTube, TV)</option>
+                    <option value="9:16">9:16 (TikTok, Instagram Stories)</option>
+                </select>
+            </div>
+        </aside>
+
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Tab 1: Script Input & Settings -->
+            <!-- Tab 1: Script Input -->
             <section id="scriptInput" class="tab-panel active">
                 <div class="content-wrapper">
                     <div class="input-section">
@@ -39,51 +85,6 @@
                         <textarea id="scriptInputArea"
                             placeholder="Nhập ý tưởng kịch bản của bạn tại đây...&#10;&#10;Ví dụ: Một cậu bé sống ở một làng chài nhỏ nhặt được một chiếc la bàn cũ kỹ không chỉ về hướng bắc mà chỉ về thứ cậu bé mong muốn nhất."
                             rows="10"></textarea>
-                    </div>
-
-                    <div class="settings-section">
-                        <h3>⚙️ Cài đặt</h3>
-
-                        <div class="setting-group">
-                            <label for="styleSelect">Phong cách làm phim</label>
-                            <select id="styleSelect">
-                                <option value="cinematic">Cinematic - Phong cách điện ảnh</option>
-                                <option value="cyberpunk">Cyberpunk - Khoa học viễn tưởng</option>
-                                <option value="realistic">Realistic - Thực tế</option>
-                                <option value="horror">Horror - Kinh dị</option>
-                                <option value="fantasy">Fantasy - Kỳ ảo</option>
-                                <option value="3d_pixar">3D Pixar - Hoạt hình 3D</option>
-                                <option value="2d_cartoon">2D Cartoon - Hoạt hình 2D</option>
-                                <option value="2d_anime">2D Anime - Anime Nhật</option>
-                                <option value="retro">Retro - Cổ điển</option>
-                                <option value="vintage">Vintage - Hoài niệm</option>
-                            </select>
-                        </div>
-
-                        <div class="setting-group">
-                            <label for="dialogueLanguageSelect">Ngôn ngữ đối thoại</label>
-                            <select id="dialogueLanguageSelect">
-                                <option value="vi-VN">Tiếng Việt</option>
-                                <option value="en-US">English</option>
-                                <option value="zh-CN">中文</option>
-                                <option value="ja-JP">日本語</option>
-                                <option value="ko-KR">한국어</option>
-                            </select>
-                        </div>
-
-                        <div class="setting-group">
-                            <label for="durationInput">Thời lượng video (giây)</label>
-                            <input type="number" id="durationInput" value="24" min="8" max="120" step="8">
-                            <small>Mỗi cảnh 8 giây. Tổng: <span id="sceneCountDisplay">3</span> cảnh</small>
-                        </div>
-
-                        <div class="setting-group">
-                            <label for="aspectRatioSelect">Tỷ lệ khung hình</label>
-                            <select id="aspectRatioSelect">
-                                <option value="16:9">16:9 (YouTube, TV)</option>
-                                <option value="9:16">9:16 (TikTok, Instagram Stories)</option>
-                            </select>
-                        </div>
                     </div>
 
                     <div class="button-group">
@@ -99,14 +100,6 @@
             <!-- Tab 2: Analyzed Script Input -->
             <section id="analyzedInput" class="tab-panel">
                 <div class="content-wrapper">
-                    <div class="settings-display">
-                        <h4>Cài đặt đã chọn:</h4>
-                        <p><strong>Phong cách:</strong> <span id="displayStyle">Cinematic</span></p>
-                        <p><strong>Ngôn ngữ đối thoại:</strong> <span id="displayDialogueLanguage">Tiếng Việt</span></p>
-                        <p><strong>Thời lượng:</strong> <span id="displayDuration">24</span> giây (<span
-                                id="displaySceneCount">3</span> cảnh)</p>
-                    </div>
-
                     <div class="input-section">
                         <label for="analyzedScriptInput">Kịch bản đã được phân tích</label>
                         <textarea id="analyzedScriptInput" placeholder="Dán kịch bản đã được phân tích từ AI vào đây..."

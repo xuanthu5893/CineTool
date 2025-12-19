@@ -19,7 +19,33 @@ You must:
 ═══════════════════════════════════════════════════════════════════
 
 This is the "Single Source of Truth" for the entire project, containing all necessary configuration and scene-specific prompts.
-⚠️ CRITICAL: Return ONLY pure JSON - NO markdown, NO explanation, NO headers, NO preamble. The output must begin with { and end with }.
+
+⚠️ CRITICAL OUTPUT FORMAT:
+1. Wrap your JSON in a markdown code block starting with ```json
+2. Your JSON must begin with { and end with }
+3. Close the code block with ```
+4. NO explanatory text before or after the code block
+5. NO comments inside the JSON
+6. The JSON inside the code block must be valid and parseable
+
+CORRECT FORMAT:
+```json
+{
+  "masterConfig": { ... },
+  "scenePrompts": [ ... ]
+}
+```
+
+INCORRECT FORMATS (DO NOT USE):
+❌ { ... } (without code block)
+❌ Here is the JSON:
+```json
+{ ... }
+```
+❌ ```json
+{ ... }
+```
+// end of JSON
 
 
 **JSON STRUCTURE TEMPLATE:**
@@ -129,11 +155,14 @@ Scene Breakdown: ${Math.ceil(settings.duration / 8)} scenes required (8s each)
   - If RETREAT: forbid push-in that makes the subject appear to advance.
   - If HOLD: forbid camera moves that create perceived approach/retreat.
 
-⚠️ DETAILED OUTPUT REQUIRED FOR 8S SCENES:
-descriptiveProse: 200-300 words covering ENTIRE 8-second progression (0.0s→2.0s→4.0s→6.0s→8.0s states) with dialogue timing embedded
-keywords: 40-60 keywords including camera specs, lighting, character consistency markers, dialogue timing
-negativePrompt: REQUIRED - 5 categories as specified above
-finalAudioPrompt: 2-3 sentences with BPM, instruments, layers, dialogue timing, and mix %
+⚠️ DETAILED OUTPUT REQUIRED FOR 8S SCENES (ENFORCED - NON-NEGOTIABLE):
+descriptiveProse: MINIMUM 200 words, TARGET 250-300 words. Must cover ENTIRE 8-second progression with explicit timeline markers [0.0s-2.0s-4.0s-6.0s-8.0s]. Each time marker must describe micro-details (facial expressions, body language, lighting changes, camera position). Include dialogue timing if applicable. If < 200 words, OUTPUT IS INVALID.
+keywords: MINIMUM 40 keywords, TARGET 50-60 keywords. Must include: camera technical specs (focal length, aperture, movement speed), lighting details (color temperature, angles), character consistency markers (exact appearance details), continuity anchors (for Scene 2+: "direct continuation", "pose match", "eyeline match", "no direction reversal"), dialogue timing markers if applicable.
+negativePrompt: ALL 5 CATEGORIES REQUIRED with comprehensive details: visualQuality, characterConsistency, unwantedBehavior, sceneCoherence, technicalIssues. Each category must have multiple specific items.
+finalAudioPrompt: MINIMUM 2 sentences, TARGET 3-4 sentences. Must include: tempo (BPM), instruments/sound sources, sound layers breakdown, dialogue timing and emotion if applicable, mix percentages for music/dialogue/SFX/foley.
+
+**WHY EXTREME DETAIL IS MANDATORY:**
+Veo3 video generation AI is LITERAL and requires EXHAUSTIVE descriptions. Short descriptions produce inconsistent results with morphing faces, sliding feet, broken continuity. You MUST provide frame-by-frame micro-details matching the examples in each style file (200-300 words each). Study the examples carefully - that is the MINIMUM acceptable detail level.
 
 **⚠️ CHARACTER CONSISTENCY & NEGATIVE PROMPTS (CRITICAL):**
 

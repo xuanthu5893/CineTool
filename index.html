@@ -139,7 +139,13 @@
                         <div id="scenesTab" class="tab-content active">
                             <div
                                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                                <h3 style="margin: 0;">Danh Sách Cảnh</h3>
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <label
+                                        style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.9rem;">
+                                        <input type="checkbox" id="includeReferenceDetails" style="cursor: pointer;">
+                                        <span>Thêm thông tin nhân vật</span>
+                                    </label>
+                                </div>
                                 <button onclick="copyAllScenes(event)" class="copy-btn" style="padding: 10px 20px;">
                                     📋 Copy Toàn Bộ Scenes
                                 </button>
@@ -173,9 +179,11 @@
             <section id="imageGen" class="tab-panel">
                 <div class="content-wrapper split-view">
                     <div class="left-panel">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                             <h3 style="margin: 0;">JSON Input</h3>
-                            <button onclick="showApiKeyManager()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
+                            <button onclick="showApiKeyManager()" class="btn btn-secondary"
+                                style="padding: 8px 16px; font-size: 0.9rem;">
                                 🔑 Quản Lý API Key
                             </button>
                         </div>
@@ -187,7 +195,8 @@
 
                     <div class="right-panel">
                         <div class="tabs">
-                            <button class="tab-btn active" onclick="switchImageTab('imageReferences')">REFERENCES</button>
+                            <button class="tab-btn active"
+                                onclick="switchImageTab('imageReferences')">REFERENCES</button>
                             <button class="tab-btn" onclick="switchImageTab('imageScenes')">SCENES</button>
                         </div>
 
@@ -196,10 +205,12 @@
                                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                                 <h3 style="margin: 0;">References</h3>
                                 <div style="display: flex; gap: 10px;">
-                                    <button onclick="generateAllReferenceImages(event)" class="btn btn-primary" style="padding: 10px 20px;">
+                                    <button onclick="generateAllReferenceImages(event)" class="btn btn-primary"
+                                        style="padding: 10px 20px;">
                                         🖼️ Tạo Tất Cả Ảnh
                                     </button>
-                                    <button onclick="downloadAllReferenceImages()" class="btn btn-secondary" style="padding: 10px 20px;">
+                                    <button onclick="downloadAllReferenceImages()" class="btn btn-secondary"
+                                        style="padding: 10px 20px;">
                                         💾 Tải Tất Cả Ảnh
                                     </button>
                                 </div>
@@ -214,10 +225,12 @@
                                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                                 <h3 style="margin: 0;">Scenes</h3>
                                 <div style="display: flex; gap: 10px;">
-                                    <button onclick="generateAllSceneImages(event)" class="btn btn-primary" style="padding: 10px 20px;">
+                                    <button onclick="generateAllSceneImages(event)" class="btn btn-primary"
+                                        style="padding: 10px 20px;">
                                         🖼️ Tạo Tất Cả Ảnh
                                     </button>
-                                    <button onclick="downloadAllSceneImages()" class="btn btn-secondary" style="padding: 10px 20px;">
+                                    <button onclick="downloadAllSceneImages()" class="btn btn-secondary"
+                                        style="padding: 10px 20px;">
                                         💾 Tải Tất Cả Ảnh
                                     </button>
                                 </div>

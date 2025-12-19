@@ -235,7 +235,27 @@ async function copyAllScenes(event) {
     return;
   }
 
-  // Format each scene: baseVisualPrompt + descriptiveProse + keywords + negativePrompt + 'Audio' + finalAudioPrompt + '. "References": ' + references
+  // Check if user wants to include reference details
+  const includeReferenceDetails = document.getElementById("includeReferenceDetails")?.checked || false;
+
+  // Build a map of all references for quick lookup
+  let referenceMap = new Map();
+  if (includeReferenceDetails) {
+    // Add character profiles
+    if (data.masterConfig.characterProfiles) {
+      data.masterConfig.characterProfiles.forEach(char => {
+        referenceMap.set(char.id, char.description || "N/A");
+      });
+    }
+    // Add background profiles
+    if (data.masterConfig.backgroundProfiles) {
+      data.masterConfig.backgroundProfiles.forEach(bg => {
+        referenceMap.set(bg.id, bg.description || "N/A");
+      });
+    }
+  }
+
+  // Format each scene: baseVisualPrompt + descriptiveProse + keywords + negativePrompt + 'Audio' + finalAudioPrompt + '. "References": ' + references + reference details
   let copyText = scenes
     .map((scene) => {
       const videoPrompt = scene.finalVideoPrompt;
@@ -265,6 +285,21 @@ async function copyAllScenes(event) {
       if (negativePromptText) sceneText += " " + negativePromptText;
       if (audioPrompt) sceneText += " Audio " + audioPrompt;
       if (references) sceneText += '. "References": "' + references + '"';
+
+      // Add reference details if checkbox is checked
+      if (includeReferenceDetails && scene.references && scene.references.length > 0) {
+        const referenceDetails = scene.references
+          .map(refId => {
+            const description = referenceMap.get(refId);
+            return description ? `${refId}: ${description}` : null;
+          })
+          .filter(Boolean)
+          .join(". ");
+
+        if (referenceDetails) {
+          sceneText += ". " + referenceDetails;
+        }
+      }
 
       return sceneText;
     })

@@ -291,13 +291,13 @@ async function copyAllScenes(event) {
         const referenceDetails = scene.references
           .map(refId => {
             const description = referenceMap.get(refId);
-            return description ? `${refId}: ${description}` : null;
+            return description ? `[${refId.toUpperCase()}]: ${description}` : null;
           })
           .filter(Boolean)
-          .join(". ");
+          .join(" | ");
 
         if (referenceDetails) {
-          sceneText += ". " + referenceDetails;
+          sceneText += ". CHARACTER/BACKGROUND REFERENCES: " + referenceDetails;
         }
       }
 

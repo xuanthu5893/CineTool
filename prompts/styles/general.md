@@ -107,7 +107,25 @@ Scene 1 Example (with dialogue):
   "finalAudioPrompt": "[Style-specific music], 90-100 BPM, major key. Primary dialogue at [2.5s-4.5s]: 'Don't worry, we'll be fine' - calm and reassuring tone. Dialogue prioritized at 80% volume. SFX: [environmental sounds]. Foley: [character sounds]. Mix: 10% music, 10% ambient, 80% dialogue."
 }
 
-Scene 2 Example (no dialogue, HOLD action):
+Scene 2 Example (MULTI-CHARACTER scene with feature separation):{
+  "sceneNumber": 2,
+  "references": ["char_songoku", "char_foxspirit", "bg_forest"],
+  "estimatedDuration": 8,
+  "finalVideoPrompt": {
+    "descriptiveProse": "[Style-specific shot description]. Two distinct characters present. [CHAR_SONGOKU] - positioned left side of frame: adult male monkey deity, 170cm, muscular athletic build, GOLDEN-BROWN FUR covering entire body, distinctive SINGLE LONG MONKEY TAIL extending behind him with brown tip, simian facial features with expressive brown eyes, RED AND GOLD traditional Chinese armor with phoenix patterns, WOODEN STAFF weapon held in right hand, black cloth headband. CHAR_SONGOKU does NOT have nine tails, does NOT have fox ears, does NOT have white fur, does NOT have feminine features. [CHAR_FOXSPIRIT] - positioned right side of frame: female fox spirit, 165cm, slender elegant build, PURE WHITE-SILVER FUR, distinctive NINE SEPARATE FOX TAILS fanning out majestically behind her with white tips, POINTED FOX EARS on top of head, fox-like facial features with golden eyes, flowing WHITE SILK ROBES with silver embroidery, NO weapon, jade hairpin. CHAR_FOXSPIRIT does NOT have monkey tail, does NOT have staff, does NOT have golden fur, does NOT have simian features. Forest background with ancient trees. [0.0s-2.0s] Both characters face each other in conversation stance. [2.0s-4.0s] CHAR_SONGOKU's SINGLE MONKEY TAIL sways distinctly. [4.0s-6.0s] CHAR_FOXSPIRIT's NINE FOX TAILS move independently in breeze. [6.0s-8.0s] Maintain distinct separation of features. [Style-specific color grading].",
+    "keywords": "[style keywords], CHAR_SONGOKU golden-brown fur, SINGLE monkey tail, wooden staff, male, CHAR_FOXSPIRIT white-silver fur, NINE fox tails, female, no feature mixing, character separation, distinct identities, CHAR_SONGOKU unique features, CHAR_FOXSPIRIT unique features, feature isolation, 8K",
+    "negativePrompt": {
+      "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
+      "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene, feature bleeding between characters, CHAR_SONGOKU having nine tails, CHAR_SONGOKU having fox ears, CHAR_SONGOKU having white fur, CHAR_FOXSPIRIT having monkey tail, CHAR_FOXSPIRIT having staff, CHAR_FOXSPIRIT having golden fur, swapping characteristics, merged character appearances, cross-contaminated features, character features mixing",
+      "unwantedBehavior": "talking without dialogue, lip movement without speech, autonomous speech, random vocalizations",
+      "sceneCoherence": "scene cuts, sudden transitions, teleportation, inconsistent lighting, changing time of day, weather shifts mid-scene, continuity errors",
+      "technicalIssues": "frame drops, stuttering, unnatural motion, robotic movement, sliding feet, floating subjects, broken physics, jittery camera"
+    }
+  },
+  "finalAudioPrompt": "[Style-specific music], 90-100 BPM. NO dialogue. SFX: wind through trees, rustling leaves, subtle tail movement sounds. Foley: armor clinking from CHAR_SONGOKU, silk robes rustling from CHAR_FOXSPIRIT. Mix: 30% music, 70% ambient."
+}
+
+Scene 3 Example (no dialogue, HOLD action):
 {
   "sceneNumber": 2,
   "references": ["char_girl_01", "bg_meadow_01"],
@@ -178,16 +196,28 @@ Veo3 video generation AI is LITERAL and requires EXHAUSTIVE descriptions. Short 
 - For each character appearing, reference their EXACT visual description from masterConfig.characterProfiles
 - Include specific details: hair color/style, eye color, clothing, skin tone, distinctive features
 
+**⚠️ MULTI-CHARACTER SCENES - PREVENTING FEATURE BLEEDING (MANDATORY):**
+When multiple characters appear in the same scene (references array has 2+ character IDs):
+- descriptiveProse MUST use EXPLICIT OWNERSHIP MARKERS for each distinctive feature
+- Format: "[CHAR_ID] has [feature]. [CHAR_ID_2] has [different feature]. [CHAR_ID] does NOT have [feature from CHAR_ID_2]."
+- Example BAD: "Tôn Ngộ Không with golden fur and nine tails, Cửu Vĩ Hồ with red eyes" ❌ WRONG - features blend together
+- Example GOOD: "CHAR_SONGOKU has golden fur, single monkey tail, staff weapon. CHAR_SONGOKU does NOT have nine tails, does NOT have fox ears. CHAR_FOXSPIRIT has white-silver fur, nine distinct fox tails fanning out, fox ears. CHAR_FOXSPIRIT does NOT have monkey tail, does NOT have staff, does NOT have golden fur." ✅ CORRECT
+- In negativePrompt.characterConsistency, MUST add: "feature bleeding between characters, [CHAR_ID] having features of [CHAR_ID_2], swapping characteristics, merged appearances, cross-contaminated features"
+- In keywords, MUST add: "character separation, distinct identities, [CHAR_ID] unique features, [CHAR_ID_2] unique features, no feature mixing"
+
 **NEGATIVE PROMPT REQUIREMENTS (MANDATORY):**
 Each finalVideoPrompt MUST include a "negativePrompt" field with the following structure:
 
 "negativePrompt": {
   "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
-  "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene",
+  "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene, feature bleeding between characters, cross-contaminated features, swapping characteristics, merged character appearances, character features mixing",
   "unwantedBehavior": "talking without dialogue, lip movement without speech, autonomous speech, random vocalizations, background characters speaking",
   "sceneCoherence": "scene cuts, sudden transitions, teleportation, inconsistent lighting, changing time of day, weather shifts mid-scene, continuity errors",
   "technicalIssues": "frame drops, stuttering, unnatural motion, robotic movement, sliding feet, floating subjects, broken physics, jittery camera"
 }
+
+⚠️ For multi-character scenes (2+ characters), characterConsistency MUST also explicitly list which features must NOT cross over:
+Example: "CHAR_SONGOKU having nine tails, CHAR_FOXSPIRIT having monkey tail, CHAR_SONGOKU having fox ears, CHAR_FOXSPIRIT having golden fur"
 
 **DIALOGUE INTEGRATION (CRITICAL):**
 - Dialogue MUST be integrated directly into descriptiveProse with timing markers

@@ -88,14 +88,14 @@ INCORRECT FORMATS (DO NOT USE):
 
 **EXAMPLE SCENE STRUCTURES:**
 
-Scene 1 Example (with dialogue):
+Scene 1 Example (with dialogue - MCU + Eye Level + Dolly In):
 {
   "sceneNumber": 1,
   "references": ["char_girl_01", "bg_meadow_01"],
   "estimatedDuration": 8,
   "finalVideoPrompt": {
-    "descriptiveProse": "[Style-specific shot description] of SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair slightly windswept, white cotton shirt with visible fabric weave texture and small grass stain on left knee, dark navy shorts, fair skin with rosy cheeks. Green meadow, golden hour 15 minutes before sunset. [Style-specific camera/lens details]. [0.0s-2.0s] Girl stands straight in center frame, looking into the other person's eyes, smiling gently with dimples showing. [2.0s-2.5s] Slight head tilt when preparing to speak. [2.5s-4.5s] Her lips move smoothly as she speaks with calm, reassuring tone: 'Don't worry, we'll be fine.' [4.5s-6.0s] Mouth closes, maintains gentle smile and eye contact. [6.0s-8.0s] Camera continues, subtle hair movement in breeze, holding final composed expression. [Style-specific color grading].",
-    "keywords": "[style keywords], 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt, meadow, golden hour, [camera specs], dialogue timing 2.5s-4.5s, lip sync precise, mouth closed before after, SAME character established, 8K",
+    "descriptiveProse": "Cinematic Medium Close-Up (MCU) at Eye Level, Dolly In 0.5 ft/sec, 50mm lens, f/2.0. [Style-specific shot description] of SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair slightly windswept, white cotton shirt with visible fabric weave texture and small grass stain on left knee, dark navy shorts, fair skin with rosy cheeks. Green meadow, golden hour 15 minutes before sunset. [0.0s-2.0s] Girl stands straight in center frame, looking into the other person's eyes, smiling gently with dimples showing. [2.0s-2.5s] Slight head tilt when preparing to speak. [2.5s-4.5s] Her lips move smoothly as she speaks with calm, reassuring tone: 'Don't worry, we'll be fine.' [4.5s-6.0s] Mouth closes, maintains gentle smile and eye contact. [6.0s-8.0s] Camera dolly continues slowly closer, subtle hair movement in breeze, holding final composed expression. [Style-specific color grading].",
+    "keywords": "[style keywords], MCU, eye level, dolly in 0.5ft/sec, 50mm f2.0, 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt, meadow, golden hour, dialogue timing 2.5s-4.5s, lip sync precise, mouth closed before after, SAME character established, 8K",
     "negativePrompt": {
       "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
       "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene",
@@ -107,13 +107,13 @@ Scene 1 Example (with dialogue):
   "finalAudioPrompt": "[Style-specific music], 90-100 BPM, major key. Primary dialogue at [2.5s-4.5s]: 'Don't worry, we'll be fine' - calm and reassuring tone. Dialogue prioritized at 80% volume. SFX: [environmental sounds]. Foley: [character sounds]. Mix: 10% music, 10% ambient, 80% dialogue."
 }
 
-Scene 2 Example (MULTI-CHARACTER scene with feature separation):{
+Scene 2 Example (MULTI-CHARACTER scene with feature separation - WS + High Angle + Crane Down):{
   "sceneNumber": 2,
   "references": ["char_songoku", "char_foxspirit", "bg_forest"],
   "estimatedDuration": 8,
   "finalVideoPrompt": {
-    "descriptiveProse": "[Style-specific shot description]. Two distinct characters present. [CHAR_SONGOKU] - positioned left side of frame: adult male monkey deity, 170cm, muscular athletic build, GOLDEN-BROWN FUR covering entire body, distinctive SINGLE LONG MONKEY TAIL extending behind him with brown tip, simian facial features with expressive brown eyes, RED AND GOLD traditional Chinese armor with phoenix patterns, WOODEN STAFF weapon held in right hand, black cloth headband. CHAR_SONGOKU does NOT have nine tails, does NOT have fox ears, does NOT have white fur, does NOT have feminine features. [CHAR_FOXSPIRIT] - positioned right side of frame: female fox spirit, 165cm, slender elegant build, PURE WHITE-SILVER FUR, distinctive NINE SEPARATE FOX TAILS fanning out majestically behind her with white tips, POINTED FOX EARS on top of head, fox-like facial features with golden eyes, flowing WHITE SILK ROBES with silver embroidery, NO weapon, jade hairpin. CHAR_FOXSPIRIT does NOT have monkey tail, does NOT have staff, does NOT have golden fur, does NOT have simian features. Forest background with ancient trees. [0.0s-2.0s] Both characters face each other in conversation stance. [2.0s-4.0s] CHAR_SONGOKU's SINGLE MONKEY TAIL sways distinctly. [4.0s-6.0s] CHAR_FOXSPIRIT's NINE FOX TAILS move independently in breeze. [6.0s-8.0s] Maintain distinct separation of features. [Style-specific color grading].",
-    "keywords": "[style keywords], CHAR_SONGOKU golden-brown fur, SINGLE monkey tail, wooden staff, male, CHAR_FOXSPIRIT white-silver fur, NINE fox tails, female, no feature mixing, character separation, distinct identities, CHAR_SONGOKU unique features, CHAR_FOXSPIRIT unique features, feature isolation, 8K",
+    "descriptiveProse": "Cinematic Wide Shot (WS) at High Angle, Crane Down 1.5 ft/sec, 24mm lens, f/8. [Style-specific shot description]. Two distinct characters present. [CHAR_SONGOKU] - positioned left side of frame: adult male monkey deity, 170cm, muscular athletic build, GOLDEN-BROWN FUR covering entire body, distinctive SINGLE LONG MONKEY TAIL extending behind him with brown tip, simian facial features with expressive brown eyes, RED AND GOLD traditional Chinese armor with phoenix patterns, WOODEN STAFF weapon held in right hand, black cloth headband. CHAR_SONGOKU does NOT have nine tails, does NOT have fox ears, does NOT have white fur, does NOT have feminine features. [CHAR_FOXSPIRIT] - positioned right side of frame: female fox spirit, 165cm, slender elegant build, PURE WHITE-SILVER FUR, distinctive NINE SEPARATE FOX TAILS fanning out majestically behind her with white tips, POINTED FOX EARS on top of head, fox-like facial features with golden eyes, flowing WHITE SILK ROBES with silver embroidery, NO weapon, jade hairpin. CHAR_FOXSPIRIT does NOT have monkey tail, does NOT have staff, does NOT have golden fur, does NOT have simian features. Forest background with ancient trees surrounds them. [0.0s-2.0s] Both characters face each other in conversation stance, camera reveals forest scale from above. [2.0s-4.0s] CHAR_SONGOKU's SINGLE MONKEY TAIL sways distinctly. [4.0s-6.0s] CHAR_FOXSPIRIT's NINE FOX TAILS move independently in breeze. [6.0s-8.0s] Crane continues descending to eye level, maintain distinct separation of features. [Style-specific color grading].",
+    "keywords": "[style keywords], WS, high angle, crane down 1.5ft/sec, 24mm f8, CHAR_SONGOKU golden-brown fur, SINGLE monkey tail, wooden staff, male, CHAR_FOXSPIRIT white-silver fur, NINE fox tails, female, no feature mixing, character separation, distinct identities, CHAR_SONGOKU unique features, CHAR_FOXSPIRIT unique features, feature isolation, forest scale, 8K",
     "negativePrompt": {
       "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
       "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene, feature bleeding between characters, CHAR_SONGOKU having nine tails, CHAR_SONGOKU having fox ears, CHAR_SONGOKU having white fur, CHAR_FOXSPIRIT having monkey tail, CHAR_FOXSPIRIT having staff, CHAR_FOXSPIRIT having golden fur, swapping characteristics, merged character appearances, cross-contaminated features, character features mixing",
@@ -125,14 +125,14 @@ Scene 2 Example (MULTI-CHARACTER scene with feature separation):{
   "finalAudioPrompt": "[Style-specific music], 90-100 BPM. NO dialogue. SFX: wind through trees, rustling leaves, subtle tail movement sounds. Foley: armor clinking from CHAR_SONGOKU, silk robes rustling from CHAR_FOXSPIRIT. Mix: 30% music, 70% ambient."
 }
 
-Scene 3 Example (no dialogue, HOLD action):
+Scene 3 Example (no dialogue, HOLD action - CU + Low Angle + Static Locked):
 {
-  "sceneNumber": 2,
+  "sceneNumber": 3,
   "references": ["char_girl_01", "bg_meadow_01"],
   "estimatedDuration": 8,
   "finalVideoPrompt": {
-    "descriptiveProse": "Direct continuation from Scene 1 end-frame. No new beat starts. Start EXACTLY from previous end-state: [girl standing center frame, gentle smile with dimples showing, direct eye contact with camera, slight head tilt to right, hair settled with minimal wind movement, arms relaxed at sides, facing camera straight-on, distance locked]. Primary action verb: HOLD_AND_SMILE. No other primary action allowed. Distance to camera remains constant; no stepping; only micro-motions. SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair, white cotton shirt with grass stain still visible on left knee, dark navy shorts, fair skin with rosy cheeks on both sides, dimples when smiling. Maintains exact same meadow background with golden hour lighting. [Style-specific camera locked]. [0.0s-2.0s] Girl maintains gentle smile, dimples visible, eyes locked on camera with warm expression. Minimal micro-movements: slight chest rise/fall from breathing, occasional blink. [2.0s-4.0s] Smile deepens slightly, dimples become more pronounced. Head remains in same tilt position. Eyes sparkle with joyful expression. [4.0s-6.0s] Gentle exhale, shoulders relax imperceptibly. Smile sustains with same intensity. Background continues. [6.0s-8.0s] Final hold of expression, wind causes single strand of hair to drift across cheek. Maintains eye contact and warm smile throughout. No dialogue in this scene - pure visual emotional hold. [Style-specific color grading maintains consistency].",
-    "keywords": "direct continuation, start from previous end-frame, pose match, eyeline match, no direction reversal, [style keywords], HOLD_AND_SMILE verb lock, distance constant no stepping, 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt grass stain, same meadow golden hour, static hold camera, no dialogue scene, pure expression hold, micro-movements only, breathing chest rise fall, occasional blink, smile sustained, dimples visible, eye contact maintained, emotional continuity, SAME character established, 8K",
+    "descriptiveProse": "Direct continuation from Scene 2 end-frame. No new beat starts. Start EXACTLY from previous end-state: [girl standing center frame, gentle smile with dimples showing, direct eye contact with camera, slight head tilt to right, hair settled with minimal wind movement, arms relaxed at sides, facing camera straight-on, distance locked]. Cinematic Close-Up (CU) at Low Angle, Static Locked, 85mm lens, f/1.8. Primary action verb: HOLD_AND_SMILE. No other primary action allowed. Distance to camera remains constant; no stepping; only micro-motions. SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair, white cotton shirt with grass stain still visible on left knee, dark navy shorts, fair skin with rosy cheeks on both sides, dimples when smiling. Maintains exact same meadow background with golden hour lighting. [0.0s-2.0s] Girl maintains gentle smile, dimples visible, eyes locked on camera with warm expression. Minimal micro-movements: slight chest rise/fall from breathing, occasional blink. Low angle emphasizes hopeful upward gaze. [2.0s-4.0s] Smile deepens slightly, dimples become more pronounced. Head remains in same tilt position. Eyes sparkle with joyful expression. [4.0s-6.0s] Gentle exhale, shoulders relax imperceptibly. Smile sustains with same intensity. Background continues with shallow depth of field. [6.0s-8.0s] Final hold of expression, wind causes single strand of hair to drift across cheek. Maintains eye contact and warm smile throughout. No dialogue in this scene - pure visual emotional hold. [Style-specific color grading maintains consistency].",
+    "keywords": "direct continuation, start from previous end-frame, pose match, eyeline match, no direction reversal, [style keywords], CU, low angle, static locked, 85mm f1.8, HOLD_AND_SMILE verb lock, distance constant no stepping, 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt grass stain, same meadow golden hour, hopeful upward gaze, no dialogue scene, pure expression hold, micro-movements only, breathing chest rise fall, occasional blink, smile sustained, dimples visible, eye contact maintained, emotional continuity, SAME character established, 8K",
     "negativePrompt": {
       "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
       "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene, grass stain disappearing",
@@ -146,6 +146,45 @@ Scene 3 Example (no dialogue, HOLD action):
 
 🔑 CRITICAL RULES (ALL STYLES):
 Scene Breakdown: ${Math.ceil(settings.duration / 8)} scenes required (8s each)
+
+**⚠️ CAMERA ANGLE & SHOT VARIETY (MANDATORY):**
+You MUST use DIVERSE camera angles and shot sizes across scenes. DO NOT default to the same angle repeatedly.
+
+**Shot Size Options (use variety):**
+- ECU (Extreme Close-Up): Face details, eyes, hands - for intense emotion/detail
+- CU (Close-Up): Face and shoulders - for emotional moments
+- MCU (Medium Close-Up): Head to chest - for dialogue/reactions
+- MS (Medium Shot): Waist up - for character actions
+- MWS (Medium Wide Shot): Full body with some environment - for character in context
+- WS (Wide Shot): Full body + significant environment - for establishing/spatial context
+- EWS (Extreme Wide Shot): Landscape-dominant with small character - for grand scale
+
+**Angle Options (use variety):**
+- Eye Level: Neutral, objective perspective
+- High Angle (looking down): Vulnerability, weakness, isolation
+- Low Angle (looking up): Power, dominance, heroic
+- Dutch Angle (tilted): Unease, disorientation, tension
+- Over-the-Shoulder: Conversation, POV context
+- Bird's Eye (top-down): Strategic overview, god's view
+
+**Camera Movement Options:**
+- Static Locked: Stillness, observation, contemplation
+- Dolly In/Out: Emotional intensification/release
+- Pan: Following action, revealing space
+- Tilt: Vertical reveal, scale emphasis
+- Handheld: Intimacy, urgency, instability
+- Steadicam: Smooth tracking, fluid following
+- Crane/Jib: Grand movement, epic scale
+
+**SELECTION CRITERIA (choose based on scene intent):**
+- Emotional intimacy = CU/ECU + Eye Level or Low Angle + Dolly In
+- Action/Movement = MS/MWS + Handheld or Steadicam
+- Grand scale = WS/EWS + High Angle or Crane
+- Tension/Unease = MCU/MS + Dutch Angle + Static or Slow Push
+- Character power = MS + Low Angle + Static or Slow Dolly
+- Vulnerability = CU + High Angle + Static
+
+⚠️ DIVERSITY REQUIREMENT: Across all ${Math.ceil(settings.duration / 8)} scenes, you MUST use at least ${Math.ceil(settings.duration / 8) >= 3 ? '3' : '2'} different shot sizes and at least 2 different camera movements. DO NOT repeat the same shot-angle-movement combination more than once unless narrative requires it.
 
 **FINALVIDEOPROMPT-ONLY CONTINUITY (MANDATORY):**
 - Assume the user will use ONLY `finalVideoPrompt` to generate videos in Veo3. Therefore, all continuity constraints MUST be embedded inside:

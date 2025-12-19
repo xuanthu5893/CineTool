@@ -8,7 +8,11 @@
       "Bash(test:*)",
       "Bash(cat:*)",
       "Bash(open:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(done)",
+      "Bash(wc:*)"
     ]
   }
 }

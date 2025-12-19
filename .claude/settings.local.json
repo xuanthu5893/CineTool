@@ -4,7 +4,11 @@
       "Bash(python3:*)",
       "Bash(node -e:*)",
       "Bash(ls:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(test:*)",
+      "Bash(cat:*)",
+      "Bash(open:*)",
+      "Bash(grep:*)"
     ]
   }
 }

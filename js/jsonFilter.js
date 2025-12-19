@@ -1,11 +1,11 @@
 // JSON Filter Screen - Tab 3
 
 // Parse and analyze JSON input
-function parseJsonInput() {
+async function parseJsonInput() {
   const jsonInput = document.getElementById("jsonInput")?.value.trim();
 
   if (!jsonInput) {
-    alert("⚠️ Vui lòng nhập JSON!");
+    await showAlert("Vui lòng nhập JSON!", "warning");
     return;
   }
 
@@ -31,8 +31,9 @@ function parseJsonInput() {
     displayReferences(data);
   } catch (error) {
     console.error("JSON Parse Error:", error);
-    alert(
-      "❌ JSON không hợp lệ! Vui lòng kiểm tra lại.\n\nLỗi: " + error.message
+    await showAlert(
+      "JSON không hợp lệ! Vui lòng kiểm tra lại.\n\nLỗi: " + error.message,
+      "error"
     );
   }
 }
@@ -149,9 +150,9 @@ function displayReferences(data) {
 }
 
 // Copy all references to clipboard
-function copyAllReferences(event) {
+async function copyAllReferences(event) {
   if (!window.currentJsonData || !window.currentJsonData.masterConfig) {
-    alert("❌ Không có dữ liệu references để copy!");
+    await showAlert("Không có dữ liệu references để copy!", "error");
     return;
   }
 
@@ -185,7 +186,7 @@ function copyAllReferences(event) {
   }
 
   if (allRefs.length === 0) {
-    alert("❌ Không có references nào để copy!");
+    await showAlert("Không có references nào để copy!", "error");
     return;
   }
 
@@ -212,16 +213,16 @@ function copyAllReferences(event) {
         btn.style.background = "";
       }, 2000);
     })
-    .catch((err) => {
+    .catch(async (err) => {
       console.error("Copy failed:", err);
-      alert("❌ Không thể copy. Vui lòng thử lại!");
+      await showAlert("Không thể copy. Vui lòng thử lại!", "error");
     });
 }
 
 // Copy all scenes to clipboard
-function copyAllScenes(event) {
+async function copyAllScenes(event) {
   if (!window.currentJsonData || !window.currentJsonData.scenePrompts) {
-    alert("❌ Không có dữ liệu scenes để copy!");
+    await showAlert("Không có dữ liệu scenes để copy!", "error");
     return;
   }
 
@@ -230,7 +231,7 @@ function copyAllScenes(event) {
   const scenes = data.scenePrompts;
 
   if (scenes.length === 0) {
-    alert("❌ Không có scenes nào để copy!");
+    await showAlert("Không có scenes nào để copy!", "error");
     return;
   }
 
@@ -284,16 +285,16 @@ function copyAllScenes(event) {
         btn.style.background = "";
       }, 2000);
     })
-    .catch((err) => {
+    .catch(async (err) => {
       console.error("Copy failed:", err);
-      alert("❌ Không thể copy. Vui lòng thử lại!");
+      await showAlert("Không thể copy. Vui lòng thử lại!", "error");
     });
 }
 
 // Copy individual scene video prompt
-function copyScenePrompt(index) {
+async function copyScenePrompt(index) {
   if (!window.currentJsonData || !window.currentJsonData.scenePrompts[index]) {
-    alert("❌ Không tìm thấy dữ liệu cảnh!");
+    await showAlert("Không tìm thấy dữ liệu cảnh!", "error");
     return;
   }
 
@@ -301,7 +302,7 @@ function copyScenePrompt(index) {
   const videoPrompt = scene.finalVideoPrompt;
 
   if (!videoPrompt) {
-    alert("❌ Cảnh này không có video prompt!");
+    await showAlert("Cảnh này không có video prompt!", "error");
     return;
   }
 
@@ -339,19 +340,19 @@ ${videoPrompt.keywords}
   // Copy to clipboard
   navigator.clipboard
     .writeText(promptText)
-    .then(() => {
-      alert("✓ Đã copy video prompt vào clipboard!");
+    .then(async () => {
+      await showAlert("Đã copy video prompt vào clipboard!", "success");
     })
-    .catch((err) => {
+    .catch(async (err) => {
       console.error("Copy failed:", err);
-      alert("❌ Không thể copy. Vui lòng thử lại!");
+      await showAlert("Không thể copy. Vui lòng thử lại!", "error");
     });
 }
 
 // Copy individual scene audio prompt
-function copySceneAudio(index) {
+async function copySceneAudio(index) {
   if (!window.currentJsonData || !window.currentJsonData.scenePrompts[index]) {
-    alert("❌ Không tìm thấy dữ liệu cảnh!");
+    await showAlert("Không tìm thấy dữ liệu cảnh!", "error");
     return;
   }
 
@@ -359,7 +360,7 @@ function copySceneAudio(index) {
   const audioPrompt = scene.finalAudioPrompt;
 
   if (!audioPrompt) {
-    alert("❌ Cảnh này không có audio prompt!");
+    await showAlert("Cảnh này không có audio prompt!", "error");
     return;
   }
 
@@ -372,12 +373,12 @@ ${audioPrompt}`;
   // Copy to clipboard
   navigator.clipboard
     .writeText(promptText)
-    .then(() => {
-      alert("✓ Đã copy audio prompt vào clipboard!");
+    .then(async () => {
+      await showAlert("Đã copy audio prompt vào clipboard!", "success");
     })
-    .catch((err) => {
+    .catch(async (err) => {
       console.error("Copy failed:", err);
-      alert("❌ Không thể copy. Vui lòng thử lại!");
+      await showAlert("Không thể copy. Vui lòng thử lại!", "error");
     });
 }
 

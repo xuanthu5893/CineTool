@@ -8,7 +8,7 @@ async function generateJsonPrompt() {
     ?.value.trim();
 
   if (!analyzedScript) {
-    alert("⚠️ Vui lòng nhập kịch bản đã được phân tích!");
+    await showAlert("Vui lòng nhập kịch bản đã được phân tích!", "warning");
     return null;
   }
 
@@ -119,7 +119,7 @@ ${prompts.userPrompt}`;
   if (success) {
     showNotification("copyNotification2");
   } else {
-    alert("❌ Không thể copy. Vui lòng thử lại!");
+    await showAlert("Không thể copy. Vui lòng thử lại!", "error");
   }
 }
 

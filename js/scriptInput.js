@@ -8,7 +8,7 @@ async function loadPromptFile(filename) {
         return await response.text();
     } catch (error) {
         console.error(`Error loading ${filename}:`, error);
-        alert(`⚠️ Không thể tải file prompt: ${filename}`);
+        await showAlert(`Không thể tải file prompt: ${filename}`, 'error');
         return '';
     }
 }
@@ -19,7 +19,7 @@ async function generateScriptPrompt() {
     const scriptText = document.getElementById('scriptInputArea')?.value.trim();
 
     if (!scriptText) {
-        alert('⚠️ Vui lòng nhập nội dung kịch bản!');
+        await showAlert('Vui lòng nhập nội dung kịch bản!', 'warning');
         return null;
     }
 
@@ -68,7 +68,7 @@ ${prompts.userPrompt}`;
     if (success) {
         showNotification('copyNotification1');
     } else {
-        alert('❌ Không thể copy. Vui lòng thử lại!');
+        await showAlert('Không thể copy. Vui lòng thử lại!', 'error');
     }
 }
 

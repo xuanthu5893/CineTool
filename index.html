@@ -26,6 +26,9 @@
                 <button class="nav-tab" data-tab="jsonFilter" onclick="switchScreen('jsonFilter')">
                     🔧 Lọc JSON
                 </button>
+                <button class="nav-tab" data-tab="imageGen" onclick="switchScreen('imageGen')">
+                    🖼️ Tạo Ảnh
+                </button>
             </div>
         </nav>
 
@@ -165,7 +168,80 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Tab 4: Image Generation -->
+            <section id="imageGen" class="tab-panel">
+                <div class="content-wrapper split-view">
+                    <div class="left-panel">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <h3 style="margin: 0;">JSON Input</h3>
+                            <button onclick="showApiKeyManager()" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
+                                🔑 Quản Lý API Key
+                            </button>
+                        </div>
+                        <textarea id="imageJsonInput"
+                            placeholder='Dán JSON từ AI vào đây...&#10;&#10;{&#10;  "masterConfig": { ... },&#10;  "scenePrompts": [ ... ]&#10;}'
+                            rows="12"></textarea>
+                        <button id="parseImageJsonBtn" class="btn btn-primary">🔄 Phân Tích JSON</button>
+                    </div>
+
+                    <div class="right-panel">
+                        <div class="tabs">
+                            <button class="tab-btn active" onclick="switchImageTab('imageReferences')">REFERENCES</button>
+                            <button class="tab-btn" onclick="switchImageTab('imageScenes')">SCENES</button>
+                        </div>
+
+                        <div id="imageReferencesTab" class="tab-content active">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h3 style="margin: 0;">References</h3>
+                                <div style="display: flex; gap: 10px;">
+                                    <button onclick="generateAllReferenceImages(event)" class="btn btn-primary" style="padding: 10px 20px;">
+                                        🖼️ Tạo Tất Cả Ảnh
+                                    </button>
+                                    <button onclick="downloadAllReferenceImages()" class="btn btn-secondary" style="padding: 10px 20px;">
+                                        💾 Tải Tất Cả Ảnh
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="imageReferencesOutput" class="output-content">
+                                <p class="placeholder">Chưa có dữ liệu. Vui lòng nhập JSON và nhấn "Phân Tích JSON".</p>
+                            </div>
+                        </div>
+
+                        <div id="imageScenesTab" class="tab-content">
+                            <div
+                                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                                <h3 style="margin: 0;">Scenes</h3>
+                                <div style="display: flex; gap: 10px;">
+                                    <button onclick="generateAllSceneImages(event)" class="btn btn-primary" style="padding: 10px 20px;">
+                                        🖼️ Tạo Tất Cả Ảnh
+                                    </button>
+                                    <button onclick="downloadAllSceneImages()" class="btn btn-secondary" style="padding: 10px 20px;">
+                                        💾 Tải Tất Cả Ảnh
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="imageScenesOutput" class="output-content">
+                                <p class="placeholder">Chưa có dữ liệu. Vui lòng nhập JSON và nhấn "Phân Tích JSON".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+    </div>
+
+    <!-- Modal/Popup Container -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-icon"></span>
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-buttons"></div>
+        </div>
     </div>
 
     <!-- Load modular scripts -->
@@ -173,6 +249,7 @@
     <script src="js/scriptInput.js"></script>
     <script src="js/analyzedInput.js"></script>
     <script src="js/jsonFilter.js"></script>
+    <script src="js/imageGen.js"></script>
     <script src="js/navigation.js"></script>
 </body>
 

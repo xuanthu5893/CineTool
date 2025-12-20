@@ -74,8 +74,8 @@ Teal & Orange | Bleach Bypass | Green/Yellow Digital (Fincher) | Warm Nostalgic 
 
 ### EXAMPLE 1: Deakins Contemplative Drama
 
-**Short Version (100 words):**
-Medium shot of 40-year-old man in navy suit at office window at dusk. Single 90° window creates Rembrandt triangle on left cheek (Deakins signature). Static locked camera. Man stands motionless facing window [0-2s], slow head turn toward camera catching window light in eyes [2-4s], direct eye contact showing internal conflict [4-6s], head lowers breaking contact [6-8s]. Natural filmic grading 5600K desaturated, warm-cool contrast, natural vignette. City lights intensify as dusk deepens. Subtle film grain. Contemplative mood.
+**Descriptive Prose (175 words):**
+Medium shot of 40-year-old man in navy suit at office window at dusk using Deakins' signature single-source window technique. Shot framed at eye level with static locked camera throughout full 8-second duration. Man positioned 3 feet from floor-to-ceiling window, crisp white dress shirt visible beneath tailored navy wool suit jacket with subtle texture. Single 90° window positioned camera-left creates dramatic Rembrandt triangle on left cheek, with defined triangle of light beneath eye (classic Deakins motivated lighting philosophy). Window light is natural 5600K daylight transitioning to warm 4500K as dusk progresses. Man stands perfectly motionless facing window, silhouette against deepening blue hour sky [0-2s]. Slow, deliberate head turn toward camera with controlled neck rotation, window light gradually catching in eyes revealing amber iris color [2-4s]. Direct eye contact holds, eyes reflecting both window light and internal conflict, micro-expression of tension in jaw [4-6s]. Head slowly lowers breaking eye contact, light sliding off face back into shadow [6-8s]. Natural filmic grading 5600K desaturated to 70% saturation, warm interior tones contrasting cool exterior blue hour, natural lens vignette darkening edges. City lights outside window intensify as dusk deepens creating bokeh points. Subtle 35mm film grain texture. Contemplative, introspective mood with Villeneuve-style slow-burn tension.
 
 **Keywords:** cinematic, Deakins style, contemplative, 40-year-old man, navy suit, office dusk, single window light, Rembrandt triangle 90°, static locked, 32mm f/4, natural filmic 5600K, desaturated, warm cool contrast, internal conflict, slow head turn, eye contact, film grain, 8K
 
@@ -87,8 +87,8 @@ Medium shot of 40-year-old man in navy suit at office window at dusk. Single 90�
 
 ### EXAMPLE 2: Nolan IMAX Epic Action
 
-**Short Version (100 words):**
-Wide shot of 32-year-old pilot in olive flight suit, fighter cockpit interior. Harsh direct sunlight 45° creates dramatic shadows (no diffusion). Handheld follow 2 ft/sec matching cockpit vibration. Pilot's gloved hands grip throttle white-knuckled [0-2s], turbulence hits with violent shake [2-4s], eyes snap forward and hand slams throttle [4-6s], G-forces pull skin back with labored breathing [6-8s]. Bleach Bypass grading desaturated with retained highlights, deep blacks, natural IMAX 65mm grain. Practical instrument lights 3200K warm accents. Intense action mood.
+**Descriptive Prose (168 words):**
+Wide shot of 32-year-old pilot in olive green flight suit, fighter jet cockpit interior using Nolan's IMAX practical effects aesthetic. Handheld camera follow at 2 ft/sec matching authentic cockpit vibration throughout full 8-second duration. Harsh direct sunlight at 45° angle through canopy creates dramatic hard-edged shadows across instrument panel with zero diffusion (Nolan's preference for unfiltered natural light). Cockpit interior shows authentic military details: worn leather seat texture, metal toggle switches, analog altitude gauges with luminous dials. Pilot's brown leather gloved hands grip throttle with white-knuckled tension, knuckles visibly straining against material [0-2s]. Violent turbulence hits causing sudden camera shake, instrument panel vibrating, loose items rattling [2-4s]. Pilot's eyes snap forward with sharp head movement, sweat visible on temple, right hand slams throttle forward with force [4-6s]. G-forces visibly pull facial skin back, cheeks compressed, labored breathing visible through oxygen mask, neck muscles straining [6-8s]. Bleach Bypass color grading heavily desaturated (30% saturation) with retained specular highlights on metal surfaces, crushed deep blacks in shadow areas. Practical instrument panel lights provide 3200K warm orange accents. Natural IMAX 65mm film grain texture. Intense visceral action mood with architectural framing of cockpit geometry.
 
 **Keywords:** cinematic, Nolan IMAX style, epic action, 32-year-old pilot, olive flight suit, fighter cockpit, handheld 2ft/sec, harsh sunlight 5600K 45°, no diffusion, hard shadows, turbulence shake, G-force effect, Bleach Bypass, desaturated, deep blacks, IMAX 65mm grain, practical lights 3200K, 8K
 
@@ -100,12 +100,13 @@ Wide shot of 32-year-old pilot in olive flight suit, fighter cockpit interior. H
 
 ## 📝 OUTPUT FORMAT RULES
 
-**descriptiveProse (80-120 words max):**
+**descriptiveProse (150-200 words):**
 - Start with shot type + angle + director reference
-- Describe visual details: colors, textures, lighting quality
-- Include emotional tone keywords
-- Timeline: [0-2s], [2-4s], [4-6s], [6-8s]
-- End with color grading + mood
+- Describe visual details: colors, textures, lighting quality, material properties
+- Include character micro-details: clothing texture, physical features, emotional micro-expressions
+- Timeline markers: [0-2s], [2-4s], [4-6s], [6-8s] with specific actions
+- End with color grading specifics + mood + director style reference
+- Focus on WHAT it looks/feels like, not excessive technical specs
 
 **keywords (30-50 keywords):**
 - Include: director references, technical specs, colors, mood, "8K"

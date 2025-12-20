@@ -212,14 +212,17 @@ You MUST use DIVERSE camera angles and shot sizes across scenes. DO NOT default 
   - If RETREAT: forbid push-in that makes the subject appear to advance.
   - If HOLD: forbid camera moves that create perceived approach/retreat.
 
-⚠️ DETAILED OUTPUT REQUIRED FOR 8S SCENES (ENFORCED - NON-NEGOTIABLE):
-descriptiveProse: MINIMUM 200 words, TARGET 250-300 words. Must cover ENTIRE 8-second progression with explicit timeline markers [0.0s-2.0s-4.0s-6.0s-8.0s]. Each time marker must describe micro-details (facial expressions, body language, lighting changes, camera position). Include dialogue timing if applicable. If < 200 words, OUTPUT IS INVALID.
-keywords: MINIMUM 40 keywords, TARGET 50-60 keywords. Must include: camera technical specs (focal length, aperture, movement speed), lighting details (color temperature, angles), character consistency markers (exact appearance details), continuity anchors (for Scene 2+: "direct continuation", "pose match", "eyeline match", "no direction reversal"), dialogue timing markers if applicable.
-negativePrompt: ALL 5 CATEGORIES REQUIRED with comprehensive details: visualQuality, characterConsistency, unwantedBehavior, sceneCoherence, technicalIssues. Each category must have multiple specific items.
-finalAudioPrompt: MINIMUM 2 sentences, TARGET 3-4 sentences. Must include: tempo (BPM), instruments/sound sources, sound layers breakdown, dialogue timing and emotion if applicable, mix percentages for music/dialogue/SFX/foley.
+⚠️ DETAILED OUTPUT REQUIRED FOR 8S SCENES (BALANCED APPROACH):
+descriptiveProse: TARGET 150-200 words (OPTIMAL RANGE). Must cover ENTIRE 8-second progression with timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]. Include: shot type + camera angle + director reference, visual details (colors, textures, lighting quality), character actions with micro-details, emotional tone, color grading + mood. Focus on WHAT it looks/feels like, not excessive technical specs.
 
-**WHY EXTREME DETAIL IS MANDATORY:**
-Veo3 video generation AI is LITERAL and requires EXHAUSTIVE descriptions. Short descriptions produce inconsistent results with morphing faces, sliding feet, broken continuity. You MUST provide frame-by-frame micro-details matching the examples in each style file (200-300 words each). Study the examples carefully - that is the MINIMUM acceptable detail level.
+keywords: TARGET 40-50 keywords. Must include: director references, essential camera specs, lighting colors (with Kelvin temps), character consistency markers, mood descriptors, continuity anchors (for Scene 2+: "direct continuation", "pose match", "eyeline match"), dialogue timing if applicable, always end with "8K".
+
+negativePrompt: ALL 5 CATEGORIES REQUIRED (but concise): visualQuality, characterConsistency, unwantedBehavior, sceneCoherence, technicalIssues. Each category should list key issues without excessive repetition.
+
+finalAudioPrompt: TARGET 2-3 sentences. Must include: tempo (BPM), key instruments/sound sources, dialogue timing and emotion if applicable, mix percentages (music/dialogue/SFX/ambient).
+
+**WHY 150-200 WORDS IS OPTIMAL:**
+Veo3 needs detailed visual descriptions but excessive length creates noise. 150-200 words provides sufficient detail for consistency (lighting, colors, textures, emotions) while remaining focused and readable. Quality over quantity - precise visual language beats verbose technical jargon.
 
 **⚠️ CHARACTER CONSISTENCY & NEGATIVE PROMPTS (CRITICAL):**
 

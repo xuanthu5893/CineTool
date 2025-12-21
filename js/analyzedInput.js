@@ -69,31 +69,7 @@ INCORRECT FORMATS (DO NOT USE):
 \`\`\`
 // end of JSON
 
-⚠️ Your response must start with \`\`\`json and end with \`\`\` - nothing else before or after.
-
-⚠️ CRITICAL LENGTH REQUIREMENTS (MANDATORY - ENFORCED):
-- descriptiveProse: MINIMUM 200 words (target 250-300 words). MUST cover ENTIRE 8-second progression with [0.0s-2.0s-4.0s-6.0s-8.0s] timeline markers. If < 200 words, output is REJECTED.
-- keywords: MINIMUM 40 keywords (target 50-60). Include technical camera specs, lighting details, character consistency markers, continuity anchors.
-- finalAudioPrompt: MINIMUM 2 full sentences (target 3-4 sentences). Include BPM, instruments, sound layers, dialogue timing if applicable, mix percentages.
-- negativePrompt: ALL 5 categories REQUIRED with comprehensive details per category.
-
-**WHY EXTREME DETAIL IS MANDATORY:**
-Your descriptiveProse feeds DIRECTLY into Veo3 video generation AI. Veo3 is LITERAL and needs EXHAUSTIVE detail to generate consistent 8-second videos. Short/vague descriptions like "character walks forward smiling" produce TERRIBLE results with morphing faces and inconsistent motion.
-
-YOU MUST PROVIDE (study the examples in style prompts):
-- Exact measurements: character height in cm, proportions, build type
-- Precise camera specs: focal length (mm), aperture (f-stop), movement speed (ft/sec)
-- Frame-by-frame breakdown: What happens at 0s, 2s, 4s, 6s, 8s with micro-details
-- Detailed lighting: Color temperature (Kelvin), angles (degrees), bounce/fill sources
-- Specific expressions: "slight furrow of brow", "dimples visible when smiling", "eyes catch window light creating subtle iris catchlight"
-- Costume details: "white cotton shirt with visible fabric weave texture and small grass stain on left knee"
-
-STUDY THESE EXAMPLES - THIS IS THE REQUIRED DETAIL LEVEL (200-300 words each):
-- Cinematic style example in cinematic.md: 280+ words describing 8s scene
-- Realistic style example in realistic.md: 270+ words for worker scene
-- Horror style example in horror.md: 290+ words for child hallway scene
-
-If you write less than 200 words, you are NOT following instructions.`;
+⚠️ Your response must start with \`\`\`json and end with \`\`\` - nothing else before or after.`;
 
   return { systemPrompt, userPrompt };
 }

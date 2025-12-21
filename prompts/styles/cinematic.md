@@ -1,5 +1,3 @@
-# Cinematic Style Guide
-
 ## ⚠️ CRITICAL: USE DIRECTOR/CINEMATOGRAPHER REFERENCES
 
 **ALWAYS apply director techniques, not just list them:**

@@ -79,3 +79,36 @@ Static Locked-Off (4-8s contemplative stillness) | Slow Imperceptible Zoom (0.1-
   "keywords": "vintage, mid-century 1950s, Kodachrome film aesthetic, authentic period, woman in 1950s attire, pastel pink circle skirt #FFB6C1, victory rolls hair, pearl necklace, mid-century modern furniture, teak credenza, Eames chair, geometric wallpaper, static locked camera, slow imperceptible zoom 0.2ft/sec, 35mm f/11 deep focus, soft window light 5600K, diffused afternoon, warm Kodachrome 3200K, heavy 16mm Bolex grain, dust and scratches overlay, Pro-Mist diffusion highlights, desaturated 60%, slightly oversaturated reds/yellows, yellowed whites #FFFACD, formal symmetry Wes Anderson, contemplative stillness, 4:3 Academy ratio, SAME character established, vintage post-processing, 8K",
   "finalAudioPrompt": "Classic gentle Jazz piano track, smooth rhythm 80-100 BPM (Cool Jazz era, Bill Evans style). Loud vinyl record surface noise and crackle throughout (authentic 1950s recording quality). Subtle foley: newspaper page turning rustle, distant muffled city street sounds (period cars, streetcar bell). No dialogue. Mix emphasizes period authenticity: 20% music, 10% ambient/foley, 70% intentional quiet space for contemplative vintage atmosphere."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Victorian-era woman gazed through rain-streaked window with melancholic sepia-toned atmosphere.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + vintage effects + period details].`
+- Example: `Scene 1 ended with: Woman standing by window, right hand touching glass pane, left hand holding lace handkerchief at chest, head tilted toward window, expression wistful, sepia tone with vignette, soft grain texture.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: by window, hand on glass, handkerchief at chest, tilted toward window, wistful expression.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + vintage era reference (e.g., "Medium shot using 1920s silent film aesthetic...")
+- Visual details, vintage effects, period-accurate styling
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in vintage style.

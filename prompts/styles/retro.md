@@ -79,3 +79,36 @@ Static Synthwave Frame (4-8s aesthetic hold) | Slow Lateral Track (1-2 ft/sec pa
   "keywords": "retro 80s, Miami Vice style, synthwave, outrun aesthetic, neon pink cyan #FF1493 #00FFFF, 1984 Ferrari Testarossa, pastel pink blazer, Ray-Ban aviators, wet asphalt reflections, slow lateral track 1.5ft/sec, 24mm f/2.8, low angle power shot, VHS chromatic aberration, scanlines 480p, tape tracking artifacts, geometric grid overlay, practical neon signs motivated lighting, high contrast no fill, oversaturated 150%, crushed blacks, warm skin 2700K vs cool cyan 7000K, 80s cool detached mystique, SAME character established, 8K with VHS overlay",
   "finalAudioPrompt": "Driving Synthwave score, heavy analog synthesizers (Moog, Prophet-5) with deep bass and lush reverb, 120 BPM minor key. Electronic drum machine (Roland TR-808) provides steady kick. No dialogue. Ambient: Electric street lamp hum (60Hz), distant city traffic low frequency rumble, Ferrari engine idle purr (deep 40-80Hz). Mix: 15% music, 15% ambient/SFX, 70% intentional negative space emphasizing cool silence."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: 1980s character danced under neon lights with VHS tracking artifacts and synthesizer vibes.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + retro effects + era-specific details].`
+- Example: `Scene 1 ended with: Character in freeze-frame dance pose, left arm pointing skyward, right arm across body, neon grid floor glowing beneath feet, chromatic aberration on edges, VHS scan lines visible.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: dance freeze pose, arm skyward, neon grid below, chromatic aberration active.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + retro era reference (e.g., "Medium shot using 1980s music video aesthetic...")
+- Visual details, retro effects, era-specific styling
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in retro style.

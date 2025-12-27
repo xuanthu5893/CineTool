@@ -439,3 +439,35 @@ generic fireball spell, overused magic circles, floating magical symbols in air,
 - Even in most fantastical scenes, maintain some realistic anchor (real physics on cloth, natural lighting behavior, genuine human emotion)
 - Avoid cartoon physics unless intentionally stylized
 - Practical effects thinking: "How would we light this if the magic was a real light source?"
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Wizard raised glowing staff and cast protective spell creating golden magical barrier.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + magical effects active].`
+- Example: `Scene 1 ended with: Wizard standing with staff raised overhead, golden magical barrier shimmering 3 feet in front, determined expression, facing approaching shadow creatures.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: staff overhead, barrier active, determined expression, facing creatures.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + director reference (e.g., "Wide shot using Peter Jackson's LOTR crane technique...")
+- Visual details, lighting, magical effects, character actions
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in epic fantasy style.

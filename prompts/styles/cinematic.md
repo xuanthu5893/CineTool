@@ -99,12 +99,28 @@ Wide shot of 32-year-old pilot in olive green flight suit, fighter jet cockpit i
 ## 📝 OUTPUT FORMAT RULES
 
 **descriptiveProse (150-200 words):**
+
+**FOR SCENE 1:**
 - Start with shot type + angle + director reference
 - Describe visual details: colors, textures, lighting quality, material properties
 - Include character micro-details: clothing texture, physical features, emotional micro-expressions
 - Timeline markers: [0-2s], [2-4s], [4-6s], [6-8s] with specific actions
 - End with color grading specifics + mood + director style reference
 - Focus on WHAT it looks/feels like, not excessive technical specs
+
+**FOR SCENE 2+ (Continuity Structure):**
+Must start with this 3-part structure before the main shot description:
+
+1. **PREVIOUS SCENE SUMMARY (1 sentence):**
+   `In previous scene: [brief summary of key action/emotion from Scene N-1].`
+
+2. **PREVIOUS SCENE END-STATE (1 sentence):**
+   `Scene ${N-1} ended with: [detailed pose + position + expression + facing direction].`
+
+3. **CURRENT SCENE START (1 sentence):**
+   `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [brief summary].`
+
+Then continue with shot type + director reference + visual details + timeline markers as normal.
 
 **keywords (30-50 keywords):**
 - Include: director references, technical specs, colors, mood, "8K"

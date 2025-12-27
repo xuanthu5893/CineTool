@@ -103,8 +103,8 @@ Scene 3 Example (no dialogue, HOLD action - CU + Low Angle + Static Locked):
 "references": ["char_girl_01", "bg_meadow_01"],
 "estimatedDuration": 8,
 "finalVideoPrompt": {
-"descriptiveProse": "Direct continuation from Scene 2 end-frame. No new beat starts. Start EXACTLY from previous end-state: [girl standing center frame, gentle smile with dimples showing, direct eye contact with camera, slight head tilt to right, hair settled with minimal wind movement, arms relaxed at sides, facing camera straight-on, distance locked]. Cinematic Close-Up (CU) at Low Angle, Static Locked, 85mm lens, f/1.8. Primary action verb: HOLD_AND_SMILE. No other primary action allowed. Distance to camera remains constant; no stepping; only micro-motions. SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair, white cotton shirt with grass stain still visible on left knee, dark navy shorts, fair skin with rosy cheeks on both sides, dimples when smiling. Maintains exact same meadow background with golden hour lighting. [0.0s-2.0s] Girl maintains gentle smile, dimples visible, eyes locked on camera with warm expression. Minimal micro-movements: slight chest rise/fall from breathing, occasional blink. Low angle emphasizes hopeful upward gaze. [2.0s-4.0s] Smile deepens slightly, dimples become more pronounced. Head remains in same tilt position. Eyes sparkle with joyful expression. [4.0s-6.0s] Gentle exhale, shoulders relax imperceptibly. Smile sustains with same intensity. Background continues with shallow depth of field. [6.0s-8.0s] Final hold of expression, wind causes single strand of hair to drift across cheek. Maintains eye contact and warm smile throughout. No dialogue in this scene - pure visual emotional hold. [Style-specific color grading maintains consistency].",
-"keywords": "direct continuation, start from previous end-frame, pose match, eyeline match, no direction reversal, [style keywords], CU, low angle, static locked, 85mm f1.8, HOLD_AND_SMILE verb lock, distance constant no stepping, 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt grass stain, same meadow golden hour, hopeful upward gaze, no dialogue scene, pure expression hold, micro-movements only, breathing chest rise fall, occasional blink, smile sustained, dimples visible, eye contact maintained, emotional continuity, SAME character established, 8K",
+"descriptiveProse": "In previous scene: Girl spoke reassuring words 'Don't worry, we'll be fine' with gentle smile and maintained eye contact. Scene 2 ended with: Girl standing center frame, gentle smile with dimples showing, direct eye contact with camera, slight head tilt to right, hair settled with minimal wind movement, arms relaxed at sides, facing camera straight-on at eye level. Direct continuation from Scene 2 end-frame. Start EXACTLY from previous end-state: standing center frame, gentle smile with dimples, direct eye contact, head tilt right, arms at sides, facing camera, distance locked. Cinematic Close-Up (CU) at Low Angle, Static Locked, 85mm lens, f/1.8. Primary action verb: HOLD_AND_SMILE. No other primary action allowed. Distance to camera remains constant; no stepping; only micro-motions. SAME character as established - 10-year-old girl (142cm, slender build), long black waist-length hair, white cotton shirt with grass stain still visible on left knee, dark navy shorts, fair skin with rosy cheeks on both sides, dimples when smiling. Maintains exact same meadow background with golden hour lighting. [0.0s-2.0s] Girl maintains gentle smile, dimples visible, eyes locked on camera with warm expression. Minimal micro-movements: slight chest rise/fall from breathing, occasional blink. Low angle emphasizes hopeful upward gaze. [2.0s-4.0s] Smile deepens slightly, dimples become more pronounced. Head remains in same tilt position. Eyes sparkle with joyful expression. [4.0s-6.0s] Gentle exhale, shoulders relax imperceptibly. Smile sustains with same intensity. Background continues with shallow depth of field. [6.0s-8.0s] Final hold of expression, wind causes single strand of hair to drift across cheek. Maintains eye contact and warm smile throughout. No dialogue in this scene - pure visual emotional hold. [Style-specific color grading maintains consistency].",
+"keywords": "previous scene summary, scene 2 end-state, direct continuation, start from previous end-frame, pose match, eyeline match, no direction reversal, [style keywords], CU, low angle, static locked, 85mm f1.8, HOLD_AND_SMILE verb lock, distance constant no stepping, 10-year-old girl, 142cm, slender build, long black hair, white cotton shirt grass stain, same meadow golden hour, hopeful upward gaze, no dialogue scene, pure expression hold, micro-movements only, breathing chest rise fall, occasional blink, smile sustained, dimples visible, eye contact maintained, emotional continuity, SAME character established, 8K",
 "negativePrompt": {
 "visualQuality": "low quality, blurry, pixelated, distorted, watermark, text overlay, logos, signatures, bad anatomy, deformed",
 "characterConsistency": "changing face, morphing features, inconsistent appearance, different hair color, different eye color, different clothing, character transformation, aging or de-aging mid-scene, grass stain disappearing",
@@ -122,9 +122,31 @@ Scene 3 Example (no dialogue, HOLD action - CU + Low Angle + Static Locked):
   - `finalVideoPrompt.descriptiveProse`
   - `finalVideoPrompt.keywords`
   - `finalVideoPrompt.negativePrompt`
-- For Scene 2+ (any sceneNumber > 1), `finalVideoPrompt.descriptiveProse` MUST start with the exact two sentences:
-  1. `Direct continuation from Scene ${sceneNumber-1} end-frame. No new beat starts.`
-  2. `Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+
+**FOR SCENE 2+ (any sceneNumber > 1), `finalVideoPrompt.descriptiveProse` MUST START WITH THIS 3-PART STRUCTURE:**
+
+1. **PREVIOUS SCENE SUMMARY (1-2 sentences):**
+   - Brief recap of what happened in the previous scene (Scene N-1)
+   - Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+   - Example: `In previous scene: Girl discovered magical compass on beach and made a wish while holding it close to chest.`
+
+2. **PREVIOUS SCENE END-STATE (1 sentence):**
+   - Exact ending state from Scene N-1
+   - Format: `Scene ${sceneNumber-1} ended with: [detailed end-state description].`
+   - Example: `Scene 2 ended with: Girl standing with compass held at chest height, eyes closed, lips mid-whisper, facing toward horizon.`
+
+3. **CURRENT SCENE START (1 sentence):**
+   - Direct continuation statement
+   - Format: `Direct continuation from Scene ${sceneNumber-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+   - Example: `Direct continuation from Scene 2 end-frame. Start EXACTLY from previous end-state: standing, compass at chest, eyes closed, facing horizon, stationary.`
+
+**EXAMPLE STRUCTURE FOR SCENE 3:**
+```
+In previous scene: Girl held compass close and whispered her wish with eyes closed. Scene 2 ended with: Girl standing straight, compass held at chest level 15cm from body, both hands gripping compass sides, eyes tightly closed, lips in mid-whisper position, facing directly toward distant lighthouse. Direct continuation from Scene 2 end-frame. Start EXACTLY from previous end-state: standing position, compass at chest height, closed eyes, whisper pose, facing lighthouse direction, no movement.
+
+[Then continue with shot description and 0.0s-8.0s timeline...]
+```
+
 - `finalVideoPrompt.descriptiveProse` MUST include a Primary Action Verb Lock line:
   - `Primary action verb: <ONE_VERB>. No other primary action allowed.`
   - Valid verbs: REVEAL, HOLD, RETREAT, ADVANCE, TURN, REACH, RUN, FALL, STRIKE, HOLD_AND_SPEAK.
@@ -135,8 +157,8 @@ Scene 3 Example (no dialogue, HOLD action - CU + Low Angle + Static Locked):
 - `finalVideoPrompt.descriptiveProse` MUST describe the full 8-second progression as:
   - `0.0s → 2.0s → 4.0s → 6.0s → 8.0s`
     and each time point must respect the same motionVector (no direction flip).
-- `finalVideoPrompt.keywords` MUST include these 5 continuity anchors in Scene 2+ (not needed in Scene 1):
-  - `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+- `finalVideoPrompt.keywords` MUST include these continuity anchors in Scene 2+:
+  - `previous scene summary`, `scene ${sceneNumber-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
 - `finalVideoPrompt.negativePrompt.sceneCoherence` MUST always include the "anti-flip pack":
   - `motion intent reset at scene start, direction reversal, axis flip, crossing the line, stepping forward after retreat, distance decreasing when it must increase`
 - Camera–Motion consistency must be enforced inside descriptiveProse too:

@@ -165,3 +165,36 @@ For **INTIMATE/HEARTFELT** scenes:
   },
   "finalAudioPrompt": "Grand orchestral action score 25% mix, fast heroic tempo 130-150 BPM, major key triumphant. Powerful brass fanfare and driving percussion create empowering energy, Michael Giacchino style. No dialogue in this scene. SFX dominate 75%: Strong wind gusts across rooftop (stereo width low-to-mid frequency 100-500Hz), cape fabric flapping dramatically (whooshing WHOOSH sound exaggerated Pixar foley), distant city traffic ambience (subtle urban backdrop), building structure creaking. Exaggerated cartoon foley: Fist clenching has subtle leather creak sound, breathing has heroic exhale emphasis. Mix: 25% orchestral music, 75% SFX/ambient/foley. Emphasizes heroic triumphant atmosphere."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Superhero stood heroically on rooftop with cape billowing and clenched fists showing determination.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + cape physics].`
+- Example: `Scene 1 ended with: Hero standing center rooftop, feet shoulder-width apart, both fists clenched at sides, chin raised upward, cape flowing dramatically behind in wind, confident smile.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: standing center, fists clenched, chin up, cape flowing, confident expression.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + Pixar reference (e.g., "Medium close-up using Incredibles heroic framing...")
+- Visual details, expressive animation, appealing character design
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in Pixar 3D animation style.

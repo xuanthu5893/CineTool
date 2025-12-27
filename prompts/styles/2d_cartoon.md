@@ -147,3 +147,36 @@ Snap Zoom In/Out (0.2-0.5s instant, 24mm↔85mm, comedic shock) | Whip Pan (5-8 
   },
   "finalAudioPrompt": "Orchestral emotional score 25% mix, inspired by Hans Zimmer Lion King style. Sweeping strings and French horn, slow tempo 80 BPM, building from soft (p) to moderate (mf). No dialogue. SFX 10%: Gentle wind ambience, distant savanna sounds (birds calling far away). Foley 5%: Subtle paw movement on rock, fabric-like fur rustle. Mix emphasizes music and ambient space: 25% music, 15% ambient/SFX/foley, 60% intentional silence/negative space for emotional weight."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Cartoon character reacted with exaggerated surprise and eyes popped out comedically.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + squash-stretch state].`
+- Example: `Scene 1 ended with: Character in stretched pose leaning back, eyes bulging cartoonishly, mouth in O-shape, arms flailing behind, legs bent at impossible angle, motion lines still visible.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: stretched back, bulging eyes, O-mouth, flailing arms, bent legs.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + cartoon reference (e.g., "Medium shot using Looney Tunes squash-and-stretch timing...")
+- Visual details, cartoon physics, exaggerated expressions
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in 2D cartoon style.

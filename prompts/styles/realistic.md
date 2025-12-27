@@ -156,3 +156,35 @@ For **CONTEMPLATIVE/POETIC** scenes:
   },
   "finalAudioPrompt": "Minimal ambient score 5% mix, single cello notes sustained 60-80 BPM, minimal and contemplative. No dialogue. Environmental sounds dominate 95%: Wind sweeping across prairie grass (low to mid frequency 100-800Hz stereo width), distant bird calls (meadowlark species-specific), fence post wood creak (subtle). Foley: Fabric flutter from wind on denim shirt, hair strands moving, slow controlled breathing. Mix: 5% music, 95% ambient/environmental. Emphasizes silence, negative space, and poetic realism."
 }
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Worker walked across factory floor and pressed machinery button with focused concentration.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + facing direction].`
+- Example: `Scene 1 ended with: Worker standing 5 feet from control panel, right hand lowered to side after button press, eyes fixed on machinery, body facing left toward equipment.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: standing position, hand at side, eyes on machinery, facing left, stationary.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + movement (e.g., "Handheld medium shot using Dardenne Brothers' 25mm technique...")
+- Visual details, lighting, character actions
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in realistic/documentary style.

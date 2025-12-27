@@ -339,3 +339,41 @@ Bottlenose dolphin POV from 80cm depth, swimming through clear tropical reef at 
 ---
 
 **AI VIDEO TIP:** For authentic animal POV, obsess over exact eye height, natural movement patterns, and what that specific animal would actually see and focus on. Don't anthropomorphize - keep it true to species behavior.
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion from animal perspective].`
+- Example: `In previous scene: Cat prowled silently toward sunbeam on living room floor with predatory focus from 28cm eye height.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + animal-specific details from POV height].`
+- Example: `Scene 1 ended with: Cat POV at 28cm height, paused at sunbeam edge in crouch position, front paws together, eye level lowered to 25cm, whiskers sensing warmth, focused on bright patch ahead.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance + eye height].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: 25cm crouch height, sunbeam edge, paws together, focused ahead, stationary.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Animal POV specification (e.g., "House cat POV from 28cm eye height, smooth prowling movement...")
+- Animal-specific movement patterns, head motion, FOV characteristics
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Environmental details from animal scale and perspective
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `eye height maintained`, `no direction reversal`
+
+**CRITICAL for Animal POV Continuity:**
+- Eye height MUST remain consistent with the animal species (e.g., cat always 25-30cm, eagle 500-3000cm altitude)
+- Movement pattern must match species gait (prowl, hop, flight, swim)
+- Head motion characteristics must continue (bobbing, stabilization, swaying)
+
+This ensures smooth continuity between scenes in animal POV perspective.

@@ -154,3 +154,36 @@ For **INTIMATE/HUMAN MOMENT** scenes:
   },
   "finalAudioPrompt": "Epic synthwave orchestral hybrid score 20% mix, building intensity 100-120 BPM, minor key with deep sub-bass foundation and soaring synth leads. No dialogue. SFX dominate 80%: Distant city traffic hum (low frequency 60-150Hz creating urban drone), flying vehicle whoosh passes (Doppler shift stereo left to right), holographic advertisements buzz (electronic interference 1-3kHz), wind rushing past tall buildings (stereo width high frequency), communication device earpiece beep (single crisp tone). Foley: Bodysuit fabric shift with arm movement, wrist interface holographic activation hum. Mix: 20% synthwave orchestral, 80% SFX/ambient. Emphasizes overwhelming dystopian megacity atmosphere."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Hacker scanned neon-lit megacity from rooftop while holographic interface displayed data.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + tech elements + neon lighting].`
+- Example: `Scene 1 ended with: Figure standing at rooftop edge, left arm raised with holographic wrist interface active, right hand at side, facing city skyline, neon reflections on bodysuit.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: rooftop edge, arm raised with interface, facing cityscape, stationary.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + director reference (e.g., "Crane down shot using Blade Runner 2049 vertical reveal technique...")
+- Visual details, neon lighting, cyberpunk tech elements
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in cyberpunk dystopian style.

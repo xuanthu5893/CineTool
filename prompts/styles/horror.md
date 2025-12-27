@@ -156,3 +156,36 @@ For **ISOLATION/HELPLESS** scenes:
   },
   "finalAudioPrompt": "No music. Pure diegetic horror through normalcy. 0% music, 100% environmental realism. Bright suburban kitchen sounds: Water dripping slowly from faucet (isolated drops hitting metal sink), distant lawnmower hum (neighbor outside creating false normalcy), refrigerator compressor low hum (60Hz), wall clock ticking (loud in silence), fly buzzing (erratic stereo movement landing on shoulder). Foley: Hands moving in soapy water (subtle splash), water dripping from raised hands (individual drops), fabric shift from cardigan. No breathing audible (unsettling absence). Mix emphasizes mundane sounds becoming horrific through context and dissociative stillness."
 }
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Woman stood motionless at kitchen sink with hands in water showing eerie dissociative stillness.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + psychological state].`
+- Example: `Scene 1 ended with: Woman frozen at sink, hands submerged in soapy water, blank thousand-yard stare toward window, body completely still.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: frozen at sink, hands in water, stare toward window, motionless.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + director reference (e.g., "Static locked medium shot using Ari Aster slow-burn technique...")
+- Visual details, lighting, psychological horror elements
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in horror/psychological thriller style.

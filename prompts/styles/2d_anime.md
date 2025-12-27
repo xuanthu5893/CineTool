@@ -407,3 +407,36 @@ realistic 3D CGI, live-action VFX, western cartoon, chibi style, thick line vari
 **Negative Prompt - Anime Action-Specific:**
 off-model character during motion, inconsistent line weight mid-rotation, broken anatomy poses, stiff animation, no cloth dynamics, static cape, simple magic circle, low-detail effects, missing particle layers, no speed lines, weak color saturation on magic, realistic motion blur instead of stylized, demon with visible features (should be silhouette), stationary combat pose, no environmental destruction, clean undamaged costume, missing impact, no sakuga quality motion
 
+
+
+---
+
+## 🔗 SCENE CONTINUITY REQUIREMENTS (FOR SCENE 2+)
+
+**CRITICAL:** When generating Scene 2 or later (any sceneNumber > 1), the `descriptiveProse` MUST start with this 3-part continuity structure:
+
+**1. PREVIOUS SCENE SUMMARY (1 sentence):**
+- Brief recap of what happened in Scene N-1
+- Format: `In previous scene: [brief 1-sentence summary of key action/emotion].`
+- Example: `In previous scene: Magical girl transformed with swirling sakura petals and dramatic power-up sequence.`
+
+**2. PREVIOUS SCENE END-STATE (1 sentence):**
+- Exact ending state from Scene N-1
+- Format: `Scene ${N-1} ended with: [detailed pose + position + expression + anime effects].`
+- Example: `Scene 1 ended with: Magical girl in finishing transformation pose, right arm extended forward with glowing wand, left hand on hip, confident smile, sakura petals floating around, sparkle effects fading.`
+
+**3. CURRENT SCENE START (1 sentence):**
+- Direct continuation statement
+- Format: `Direct continuation from Scene ${N-1} end-frame. Start EXACTLY from previous end-state: [pose + facing + eyeline + momentum + distance].`
+- Example: `Direct continuation from Scene 1 end-frame. Start EXACTLY from previous end-state: transformation pose, arm extended with wand, hand on hip, confident smile, petals floating.`
+
+**After these 3 sentences, continue with the normal shot description:**
+- Shot type + angle + anime reference (e.g., "Dynamic medium shot using Sailor Moon transformation aesthetic...")
+- Visual details, anime-specific effects, character expressions
+- Timeline markers [0.0s-2.0s], [2.0s-4.0s], [4.0s-6.0s], [6.0s-8.0s]
+- Color grading + mood
+
+**Keywords for Scene 2+** must include:
+- `previous scene summary`, `scene ${N-1} end-state`, `direct continuation`, `start from previous end-frame`, `pose match`, `eyeline match`, `no direction reversal`
+
+This ensures smooth continuity between scenes in 2D anime style.

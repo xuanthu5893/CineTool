@@ -122,6 +122,81 @@
 
 ---
 
+## 👁️ WHAT ANIMALS CAN AND CANNOT SEE (CRITICAL FOR POV ACCURACY)
+
+### ❌ WHAT IS **NOT VISIBLE** IN ANIMAL POV:
+
+**Animals CANNOT see their own body parts in normal POV (same as humans can't see their nose):**
+
+- **Cat POV:** ❌ Cannot see own whiskers, nose, paws (unless looking down deliberately)
+- **Dog POV:** ❌ Cannot see own snout, ears, tail, body
+- **Eagle POV:** ❌ Cannot see own beak, wings (during flight), talons (unless looking down)
+- **Mouse POV:** ❌ Cannot see own whiskers, nose, body
+- **Dolphin POV:** ❌ Cannot see own rostrum (nose), flippers
+
+**Exception:** Only when animal deliberately looks DOWN at own body part:
+- Cat looking down at own paw while grooming
+- Dog looking down at own paws while digging
+- Eagle looking down at own talons gripping prey
+
+### ✅ WHAT **IS VISIBLE** IN ANIMAL POV:
+
+**Environmental elements from animal perspective:**
+- **Ground/Floor:** Very prominent (closer to eyes for low animals)
+- **Obstacles:** Furniture legs, grass blades, human feet/legs
+- **Prey/Food:** Central focus for predators
+- **Sky/Ceiling:** More visible for tall animals, less for ground-level
+
+**Implied sensations (not visible but suggested):**
+- **Cat whiskers:** Whiskers sense proximity to walls/objects → camera navigation reflects this (staying 3-5cm from walls)
+- **Dog nose:** Scent tracking → camera follows scent trail direction
+- **Dolphin echolocation:** Sonar clicks in audio, camera "knows" where obstacles are
+
+### 🎥 CORRECT POV FRAMING:
+
+**CAT POV - CORRECT:**
+```
+✅ Camera at 28cm showing: floor texture prominent, chair leg 15cm away (right edge of frame),
+   sunbeam ahead, human feet visible in distance. Camera stays 3-5cm from wall
+   (whisker proximity sense implied, but whiskers NOT visible in frame).
+```
+
+**CAT POV - WRONG:**
+```
+❌ Camera shows: fuzzy whiskers in bottom frame corners, pink nose tip at bottom center,
+   white paw visible at bottom edge.
+```
+
+**EAGLE POV - CORRECT:**
+```
+✅ Camera at 1200cm altitude showing: valley landscape below, rabbit visible as small brown dot,
+   mountain peaks at horizon, wings NOT visible (gyroscopic head stabilization means head
+   looks forward/down, not at own body).
+```
+
+**EAGLE POV - WRONG:**
+```
+❌ Camera shows: wingtips visible at left/right frame edges, feathered body visible below.
+```
+
+### 📝 PROMPT WRITING RULES:
+
+**DO write:**
+- "Camera stays 3-5cm from wall" (implies whisker sense, not visual)
+- "POV navigates around table leg with precision" (implies spatial awareness)
+- "Camera follows scent trail toward food bowl" (implies nose tracking)
+
+**DON'T write:**
+- "Whiskers visible at frame edges" ❌
+- "Own paws visible at bottom of frame while walking" ❌
+- "Snout/nose visible in lower frame" ❌
+
+**Exception - When animal looks at own body:**
+- "Cat looks down, POV tilts downward 60°, now own white paw visible in center frame being licked"
+- "Dog looks down at hole being dug, own brown paws visible scooping dirt"
+
+---
+
 ## 🎬 MOVEMENT PATTERNS BY SPECIES
 
 **QUADRUPED WALK (Cat, Dog, Lion):**
@@ -195,7 +270,9 @@
 
 **negativePrompt:**
 - human eye level, wrong height, floating camera, unnatural movement
+- **Body parts visible in frame:** whiskers visible, nose visible, snout visible, paws visible in frame while walking, own body visible, ears visible, tail visible, wings visible during flight, beak visible, fur visible in frame edges
 - Species-specific: "dog with cat movement", "wrong gait pattern"
+- **Exception:** Only exclude body parts if animal is NOT deliberately looking at them
 
 **finalAudioPrompt:**
 - Animal breathing/panting rhythm
@@ -214,7 +291,7 @@ House cat POV from 28cm eye height, smooth prowling movement through living room
 
 **Keywords:** cat POV, 28cm eye height, feline perspective, prowling movement 0.6ft/sec, silent predatory gait, head stabilization minimal bob 2-3cm, 200 degree FOV, wide peripheral vision, ground level perspective, chair legs prominent, human feet eye level, window hunting focus, whisker proximity sense, sunbeam stalking, furniture navigation close quarters, natural window light 5600K, desaturated 85% saturation, enhanced blue-green cat vision, smooth handheld 24mm f/4, living room interior dusk, 8K hyper-realistic
 
-**Negative Prompt:** human eye level, camera too high, excessive head bob, dog movement, wrong gait, floating camera, unnatural cat behavior, teleportation, scene cuts, inconsistent eye height, excessive camera shake, wrong field of view, front-facing eyes only
+**Negative Prompt:** human eye level, camera too high, excessive head bob, dog movement, wrong gait, floating camera, unnatural cat behavior, teleportation, scene cuts, inconsistent eye height, excessive camera shake, wrong field of view, front-facing eyes only, whiskers visible in frame, nose visible in frame, paws visible while walking, cat body visible, fur visible in frame edges, own body parts visible
 
 **Audio:** No music. 0% music, 100% environmental and foley. Cat breathing: slow controlled breaths, nearly silent. Paw sounds: soft pad placement on hardwood floor, subtle claw click. Purr motor: low frequency 25Hz rumble (very subtle, internal). Environmental: Distant bird chirping outside window (motivation), human movement in other room (muffled footsteps), air conditioning hum 60Hz. Whisker brush: ultra-subtle as POV passes table corner. Mix emphasizes silence and predatory stealth.
 
@@ -227,7 +304,7 @@ Golden Eagle POV from 1200cm altitude (40 feet), soaring over mountain valley on
 
 **Keywords:** eagle POV, golden eagle, 1200cm altitude, 40 feet height, soaring flight, thermal updraft, gyroscopic head stabilization, 340 degree FOV, telescopic central focus, predator vision, mountain valley, hunting perspective, 18mm ultra-wide f/11, deep DOF hyperfocal, forward glide 9ft/sec, head rotation precision, body banking 20 degrees, target tracking, rabbit prey detection, wings outstretched soaring, high altitude clarity, natural daylight 5600K, deep blue sky 9000K, valley shadow 4500K, desaturated 80% saturation, enhanced contrast raptor vision, 8K hyper-realistic
 
-**Negative Prompt:** ground level, low altitude, excessive camera shake, head bobbing, unstabilized movement, human perspective, close-up view, narrow FOV, blurry distance, poor depth of field, flat landscape, urban environment, wrong flight pattern, flapping wings visible in POV, broken physics, floating, scene cuts, inconsistent altitude
+**Negative Prompt:** ground level, low altitude, excessive camera shake, head bobbing, unstabilized movement, human perspective, close-up view, narrow FOV, blurry distance, poor depth of field, flat landscape, urban environment, wrong flight pattern, flapping wings visible in POV, broken physics, floating, scene cuts, inconsistent altitude, beak visible in frame, talons visible while flying, feathers visible in frame edges, eagle body visible, wingtips visible in frame
 
 **Audio:** Minimal ambient score 10% mix, single sustained cello note 40Hz suggesting vast space and solitude. Environmental 90%: High altitude wind rush (stereo width, constant 200-800Hz), thermal updraft whoosh (subtle low frequency 60-100Hz), distant valley ambience (muffled, far below). Wing sounds: Feather adjustment whisper (subtle, 2-4kHz), air flowing through primaries. No vocalizations (eagles silent while hunting). Breathing: Slow controlled raptor breaths (barely audible). Mix: 10% music, 90% environmental. Emphasizes altitude, space, and predatory focus.
 
@@ -240,7 +317,7 @@ House mouse POV from 4cm eye height, rapid exploration along kitchen baseboard a
 
 **Keywords:** mouse POV, 4cm extreme low eye height, ground level perspective, house mouse, kitchen exploration, night time, rapid scurry 2ft/sec, darting movement pattern, wall hugging behavior, 16mm ultra-wide f/5.6, exaggerated depth, 320 degree panoramic FOV, baseboard towers above, linoleum extreme closeup, whisker proximity 3-5cm, freeze behavior, predator detection, explosive escape 3ft/sec, cabinet shadow refuge, under-cabinet LED 4000K, harsh overhead lighting, strong shadows high contrast, nightlight 2800K ambient, desaturated 80% saturation, cavernous human scale, 8K hyper-realistic
 
-**Negative Prompt:** human eye level, camera too high, slow movement, graceful motion, cat-like behavior, large animal gait, wrong scale, furniture at normal size, well-lit environment, low contrast, smooth camera, stabilized movement, no fear response, standing still too long, wrong FOV, front-facing vision only
+**Negative Prompt:** human eye level, camera too high, slow movement, graceful motion, cat-like behavior, large animal gait, wrong scale, furniture at normal size, well-lit environment, low contrast, smooth camera, stabilized movement, no fear response, standing still too long, wrong FOV, front-facing vision only, whiskers visible in frame, mouse nose visible, paws visible while running, mouse body visible, fur visible in frame edges, tail visible
 
 **Audio:** No music. 0% music, 100% environmental and foley. Mouse sounds: Rapid tiny paw scratches on linoleum (high frequency 4-6kHz), fast breathing rhythm 3-4 breaths/sec, whisker brush against baseboard (ultra-subtle). Environmental from mouse acoustic perspective: Refrigerator hum (massive low frequency 60Hz, sounds enormous), human footsteps (ground vibration, low frequency impact), cabinet creak (amplified and threatening), distant water drip (echo in huge space). Heart rhythm: Rapid 8-10 beats/sec during freeze (internal biological sound). Mix emphasizes scale difference and prey animal alertness.
 
@@ -253,7 +330,7 @@ Bottlenose dolphin POV from 80cm depth, swimming through clear tropical reef at 
 
 **Keywords:** dolphin POV, bottlenose dolphin, 80cm underwater depth, swimming perspective, ocean reef, tropical water, undulating motion 5ft/sec, sine-wave swimming gait, vertical oscillation 30cm, tail propulsion rhythm, 20mm underwater lens f/8, 280 degree underwater FOV, blue-green water column, sandy bottom 3 meters, coral reef, fish school parting, echolocation scanning, banking turn body roll, sea turtle encounter, ascending to surface, caustic light patterns, sunlight penetration 5600K-7000K, natural blue-green shift 80% saturation, particulate matter, surface shimmer, 8K hyper-realistic
 
-**Negative Prompt:** above water, surface perspective, human swimming style, linear movement, no undulation, static depth, wrong FOV, poor water visibility, fresh water clarity, murky water, swimming pool, artificial lighting, wrong color temperature, red colors underwater (physically impossible at depth), floating camera, broken physics, scene cuts, inconsistent depth
+**Negative Prompt:** above water, surface perspective, human swimming style, linear movement, no undulation, static depth, wrong FOV, poor water visibility, fresh water clarity, murky water, swimming pool, artificial lighting, wrong color temperature, red colors underwater (physically impossible at depth), floating camera, broken physics, scene cuts, inconsistent depth, rostrum visible in frame, dolphin nose visible, flippers visible while swimming, dolphin body visible, dorsal fin visible in POV
 
 **Audio:** Minimal ambient underwater score 15% mix, sustained whale song harmonics (distant, low frequency 20-80Hz), creating oceanic atmosphere. Environmental underwater 85%: Dolphin echolocation clicks (rapid 2-8kHz pulses, stereo directional), breathing exhale bubbles when surfacing (burst of bubbles 100-400Hz), tail fluke propulsion (water displacement whoosh, rhythmic), reef ambient (snapping shrimp clicks 4-6kHz, distant whale calls, water movement). Body sounds: Internal perspective of muscle movement (subtle), heartbeat (slow 1.5 beats/sec, cetacean rhythm). Fish scatter sounds (water disturbance). Mix: 15% music, 85% environmental. Emphasizes aquatic immersion and marine mammal acoustic world.
 
